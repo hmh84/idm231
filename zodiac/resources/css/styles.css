@@ -1,0 +1,149 @@
+* {
+    font-family: 'Roboto', sans-serif;
+}
+body {
+    background-color: #E02020;
+    color: white;
+    font-size: 1.8rem;
+}
+header {
+    width: 100%;
+    height: 100px;
+    background-color: white;
+    color: black;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    font-size: 2rem;
+}
+header a {
+    color: black;
+}
+ul {
+    list-style-type: none;
+}
+ul.navbar {
+    height: 100%;
+}
+li {
+    width: 50%;
+    height: 100%;
+}
+li a {
+    padding: 32px;
+}
+ul.navbar li {
+    float: left;
+}
+li#how_to a {
+    position: absolute;
+    right: 0;
+}
+.row img {
+    width: 75px;
+}
+a {
+    text-decoration: none;
+    display: block;
+    width: fit-content;
+    height: 100%;
+}
+div.spacer {
+    height: 100px;
+}
+/* Rows */
+.row {
+    width: 500px;
+    display: inline-flex;
+    margin: 50px 0 50px 0;
+    text-transform: uppercase;
+}
+.row li {
+    margin-bottom: 25px;
+    height: 100px;
+}
+.row1 {
+    width: 125px;
+    text-align: -webkit-center;
+}
+.row1 li {
+    height: 100px;
+    padding-top: 30%;
+}
+li.background_0 {
+    background-color: rgba(255, 72, 72, 0);
+    width: 350px;
+}
+li.background_1 {
+    background-color: rgba(255, 72, 72, 75%);
+    width: 350px;
+}
+.row2 img {
+    float: left;
+    margin: 12.5px;
+}
+.row2 h2 {
+    position: relative;
+    height: 75px;
+    padding-top: 30px;
+    padding-left: 150px;
+}
+.selection_indicator_0 {
+    position: relative;
+    background-color: #FF4848;
+    float: left;
+    width: 10px;
+    height: 100%;
+}
+.selection_indicator_1 {
+    position: relative;
+    background-color: #fff;
+    float: left;
+    width: 10px;
+    height: 100%;
+}
+/* Dots */
+.dot {
+    background-color: black;
+    border-radius: 50%;
+    display: inline-block;
+    position: fixed;
+    z-index: -10;
+}
+#dot_1 {
+    height: 250px;
+    width: 250px;
+    left: 360px;
+    top: -20px;
+}
+#dot_2 {
+    height: 600px;
+    width: 600px;
+    left: -150px;
+    bottom: -400px;
+}
+#dot_3 {
+    height: 600px;
+    width: 600px;
+    right: -350px;
+    top: 200px;
+}
+.watermark {
+    position: fixed;
+    display: block;
+    right: 0;
+    bottom: 50px;
+    width: 400px;
+    height: 100px;
+    background-color: rgba(255, 72, 72, 75%);
+    padding: 20px;
+}
+.watermark a {
+    position: fixed;
+    display: block;
+    right: 0;
+    bottom: 50px;
+    width: 400px;
+    height: 100px;
+    color: white;
+}
