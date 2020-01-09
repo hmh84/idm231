@@ -147,6 +147,16 @@ li.background_1 {
     right: -165px;
     top: 200px;
 }
+#wheel_bg {
+    grid-area: center;
+    background-color: #00000080;
+    width: 40rem;
+    height: 40rem;
+    align-self: center;
+    top: -1rem;
+    border-radius: 50%;
+    z-index: -10;
+}
 
 /* Watermark */
 
@@ -163,24 +173,25 @@ li.background_1 {
 }
 .watermark a {
     position: fixed;
+    z-index: 10;
     display: block;
     right: 0;
     bottom: 50px;
-    width: 270px;
-    height: 100px;
+    width: 300px;
+    height: 75px;
     color: white;
 }
 
 /* Sign Container */
 
 .sign_container {
-    height: 43.25rem;
-    width: 43.25rem;
+    height: 40.25rem;
+    width: 40.25rem;
     display: grid;
     grid-template-areas:
         ". pig rat ox ."
         "dog . . . tiger"
-        "rooster . ring . rabbit"
+        "rooster . center . rabbit"
         "monkey . . . dragon"
         ". goat horse snake .";
     grid-template-columns: repeat(5, 20%);
@@ -214,15 +225,6 @@ button.sign img {
     display: block;
     z-index: 10;
     position: absolute;
-}
-#ring {
-    grid-area: ring;
-    border: 8.5rem solid #00000080;
-    border-radius: 50%;
-    width: 43.25rem;
-    height: 43.25rem;
-    z-index: 0;
-    top: -18.625rem;
 }
 #rat {
     grid-area: rat;
@@ -267,4 +269,45 @@ button.sign img {
 #pig {
     grid-area: pig;
     top: 2.3625rem;
+}
+
+/* Input */
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+	color: black;
+	opacity: 1; /* Firefox */
+}
+
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+	color: black;
+}
+
+  ::-ms-input-placeholder { /* Microsoft Edge */
+	color: black;
+}
+#year_input {
+    grid-area: center;
+    background-color: #ffffff80;
+    position: relative;
+    align-self: center;
+    width: 100%;
+    padding: .5rem;
+    border-radius: .5rem;
+}
+#submit {
+    grid-area: center;
+    background-color: #ffffff80;
+    position: relative;
+    align-self: center;
+    width: 100%;
+    padding: .5rem;
+    top: 45%;
+    border-radius: .5rem;
+}
+input[type="submit"] {
+    cursor: pointer;
+}
+#input_label {
+    grid-area: center;
+    width: max-content;
 }
