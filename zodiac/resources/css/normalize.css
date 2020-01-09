@@ -395,3 +395,6 @@ button,
 [type="submit"] {
   -webkit-appearance: button;
 }
+ul {
+  list-style-type: none;
+}
