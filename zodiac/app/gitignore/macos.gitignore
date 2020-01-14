@@ -31,10 +31,14 @@ Temporary Items
 # Other file types
 .ai
 .xd
+.eps
+.psd
 *.pyc
 *.pyo
 *.pyc
 *~
+*.bak
+*.swp
 
 # Packages #
 ############
