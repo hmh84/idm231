@@ -120,7 +120,7 @@ li.background_1 {
     height: 100%;
 }
 
-/* Dots */
+/* Background Graphics & Dots */
 
 .dot {
     background-color: black;
@@ -191,7 +191,7 @@ li.background_1 {
     grid-template-areas:
         ". pig rat ox ."
         "dog . . . tiger"
-        "rooster . center . rabbit"
+        "rooster left center right rabbit"
         "monkey . . . dragon"
         ". goat horse snake .";
     grid-template-columns: repeat(5, 20%);
@@ -271,7 +271,7 @@ button.sign img {
     top: 2.3625rem;
 }
 
-/* Input */
+/* Inputs */
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
 	color: black;
@@ -285,12 +285,30 @@ button.sign img {
   ::-ms-input-placeholder { /* Microsoft Edge */
 	color: black;
 }
-#year_input {
+#month_input {
+    grid-area: left;
+    background-color: #ffffff80;
+    position: relative;
+    align-self: center;
+    width: 75%;
+    padding: .5rem;
+    border-radius: .5rem;
+}
+#day_input {
     grid-area: center;
     background-color: #ffffff80;
     position: relative;
     align-self: center;
-    width: 100%;
+    width: 75%;
+    padding: .5rem;
+    border-radius: .5rem;
+}
+#year_input {
+    grid-area: right;
+    background-color: #ffffff80;
+    position: relative;
+    align-self: center;
+    width: 75%;
     padding: .5rem;
     border-radius: .5rem;
 }
