@@ -202,8 +202,9 @@ li.background_1 {
 
 /* Watermark */
 
-.watermark {
+#watermark {
     font-size: 1.2rem;
+    color: #fff;
     position: fixed;
     display: block;
     right: 0;
@@ -213,16 +214,26 @@ li.background_1 {
     background-color: rgba(0, 0, 0, 50%);
 }
 
-.watermark a {
+#watermark a {
     position: relative;
     transform: translateY(-63%);
+    color: fff;
 }
 
-.watermark p {
+#watermark p {
     position: relative;
     top: 50%;
     transform: translateY(-95%);
     padding-left: 5%;
+}
+
+#helpButton {
+    position: fixed;
+    z-index: 10;
+    top: 5%;
+    right: 5%;
+    width: 75px;
+    height: 75px;
 }
 
 /* Sign Container */
@@ -381,6 +392,7 @@ input[type="submit"] {
 }
 
 /*Welcome Page*/
+
 #welcomeBackground {
     position: fixed;
     z-index: 14;
@@ -391,7 +403,7 @@ input[type="submit"] {
     background-color: rgba(0, 0, 0, 50%)
 }
 
-#welcome {
+#welcomeMenu {
     position: fixed;
     margin: auto;
     z-index: 20;
@@ -413,14 +425,6 @@ input[type="submit"] {
 #welcomeColumn {
     position: relative;
     width: 100%;
-}
-
-.welcome_active {
-    display: contents;
-}
-
-.welcome_inactive {
-    display: none;
 }
 
 .welcomeColumn_1,
@@ -445,7 +449,6 @@ input[type="submit"] {
     float: left;
     padding: 1rem;
 }
-}
 
 .welcomeColumn_1,
 .welcomeColumn_3 {
@@ -460,11 +463,10 @@ input[type="submit"] {
 
 #closeWelcome {
     position: absolute;
-    z-index: 35;
     width: 8rem;
     height: 2.5rem;
-    color: black;
-    border: .2rem solid black;
+    color: white;
+    background-color: crimson;
     border-radius: 1.2rem;
     text-align: center;
     margin: auto;
