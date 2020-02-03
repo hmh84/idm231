@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Zodiac</title>
+    <title>Chinese Zodiac - Hunter H Design</title>
     <link rel="stylesheet" href="./css/normalize.css">
     <link rel="stylesheet" href="./css/styles.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
@@ -133,9 +133,11 @@
             <div id="welcomeMenu">
                 <h1>WELCOME!</h1>
                 <h2>EXPLORE THE CHINESE ZODIAC SIGNS</h2>
+                <h4>The Chinese zodiac's occur every 12 years not but during our usual Gregorian years, these take place during The Chinese New Year AKA The Lunar New Year. Chinese New Year's Day falls between mid January and late February.</h4>
                 <ul class="welcomeColumn"></ul>
                 <li class="welcomeColumn_1">
                     <h3>Enter your birthday</h3>
+                    <img src="graphics/mmddyyyy.svg" alt="MM/DD/YYYY">
                 </li>
                 <li class="welcomeColumn_2">
                     <h3>OR</h3>
@@ -144,9 +146,11 @@
                     <h3>Select any zodiac</h3>
                     <img src="graphics/05_dragon_black.svg" alt="Dragon">
                 </li>
-                <button id="closeWelcome" onclick="toggleWelcomeOff();">
-                    <h3>CLOSE</h3>
-                </button>
+                <div id="closeWelcomeWrapper">
+                    <div id="closeWelcome" onclick="toggleWelcomeOff();">
+                        <h3>Okay</h3>
+                    </div>
+                </div>
             </div>
         </div>
     </main>

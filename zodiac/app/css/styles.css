@@ -410,7 +410,7 @@ input[type="submit"] {
     top: 15vh;
     left: 20vw;
     width: 60vw;
-    height: 60vh;
+    height: 62vh;
     background-color: white;
     color: darkred;
     border-radius: 2rem;
@@ -418,8 +418,13 @@ input[type="submit"] {
 
 #welcome h1,
 #welcome h2 {
-    margin: 1.5rem auto;
+    margin: 1.5rem 3rem;
     text-align: center;
+}
+
+#welcome h4 {
+    margin: 0 3rem 2rem;
+    font-size: 1rem;
 }
 
 #welcomeColumn {
@@ -455,22 +460,33 @@ input[type="submit"] {
     font-size: 1rem;
 }
 
-.welcomeColumn_1 img,
+.welcomeColumn_1 img {
+    width: 150px;
+    transform: translateY(200%);
+}
+
 .welcomeColumn_3 img {
     width: 100px;
     transform: translateY(50%);
 }
 
-#closeWelcome {
+#closeWelcomeWrapper {
     position: absolute;
+    text-align: center;
+    width: 100%;
+    bottom: 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+#closeWelcome {
     width: 8rem;
     height: 2.5rem;
-    color: white;
-    background-color: crimson;
     border-radius: 1.2rem;
-    text-align: center;
-    margin: auto;
-    padding: .3rem;
-    left: 40%;
-    top: 85%;
+    background-color: crimson;
+    color: white;
+}
+
+#closeWelcome h3 {
+    transform: translateY(33%);
 }
