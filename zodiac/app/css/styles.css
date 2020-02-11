@@ -49,11 +49,6 @@ ul.navbar li {
     float: left;
 }
 
-li#how_to a {
-    position: absolute;
-    right: 0;
-}
-
 a {
     text-decoration: none;
     display: block;
@@ -78,6 +73,7 @@ div.spacer {
     max-height: 100%;
     position: fixed;
     margin-top: 6.25%;
+    min-width: 250px;
 }
 
 .row li {
@@ -130,19 +126,19 @@ div.spacer {
     transform: translateY(-50%);
 }
 
-li.background_0 {
+.row2 li {
     background-color: rgba(0, 0, 0, 50%);
     width: 100%;
     min-width: 210px;
 }
 
-li.background_1 {
+#asideSelected {
     background-color: rgba(255, 72, 72, 75%);
     width: 100%;
     min-width: 210px;
 }
 
-.selection_indicator_0 {
+.asideIndicator {
     position: relative;
     background-color: #FF4848;
     float: left;
@@ -150,7 +146,7 @@ li.background_1 {
     height: 100%;
 }
 
-.selection_indicator_1 {
+#indicateSelected {
     position: relative;
     background-color: #fff;
     float: left;
@@ -189,7 +185,7 @@ li.background_1 {
     top: 200px;
 }
 
-#wheel_bg {
+#wheelBg {
     grid-area: center;
     background-color: #00000080;
     width: 40rem;
@@ -203,6 +199,7 @@ li.background_1 {
 /* Watermark */
 
 #watermark {
+    z-index: 10;
     font-size: 1.2rem;
     color: #fff;
     position: fixed;
@@ -238,14 +235,14 @@ li.background_1 {
 
 /* Sign Container */
 
-.sign_container {
+.signContainer {
     height: 40.25rem;
     width: 40.25rem;
     display: grid;
     grid-template-areas:
         ". pig rat ox ."
         "dog . . . tiger"
-        "rooster left center right rabbit"
+        "rooster . center . rabbit"
         "monkey . . . dragon"
         ". goat horse snake .";
     grid-template-columns: repeat(5, 20%);
@@ -262,16 +259,6 @@ li.background_1 {
     background: none;
     border: none;
     padding: 0;
-}
-
-.sign_opacity {
-    height: 100px;
-    width: 100px;
-    border-radius: 50%;
-    background-color: rgba(0, 0, 0, 50%);
-    display: block;
-    position: absolute;
-    z-index: 0;
 }
 
 button {
@@ -360,7 +347,7 @@ button.sign img {
     color: black;
 }
 
-#bday_input {
+#bdayInput {
     grid-area: center;
     background-color: #ffffff80;
     position: relative;
@@ -386,7 +373,7 @@ input[type="submit"] {
     cursor: pointer;
 }
 
-#input_label {
+#inputLabel {
     grid-area: center;
     width: max-content;
 }
