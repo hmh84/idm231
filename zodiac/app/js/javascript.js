@@ -61,6 +61,7 @@ submit.addEventListener('click', (event) => {
 //Zodiac Info
 
 const rat = {
+    image: 'graphics/01_rat.svg',
     signName: "Rat",
     topline: "Quick-witted, resourceful, and versatile...",
     description1: "According to the Chinese zodiac story, in the competition held by the Jade Emperor to decide the zodiac animals, the quick-witted rat asked the diligent ox to take him on a ride to cross the river and jumped down before the ox crossed the finish line, so the rat won the race and became the first of the zodiac animals.",
@@ -68,10 +69,10 @@ const rat = {
     mostCompatible: "Ox, Rabbit, or Dragon",
     leaseCompatible: "Horse or Rooster",
     sound: 'sounds/01_rat.mp3',
-    image: 'graphics/01_rat.svg'
 };
 
 const ox = {
+    image: 'graphics/02_ox.svg',
     signName: "Ox",
     topline: "Diligent and dependable...",
     description1: "Oxen are known for diligence, dependability, strength and determination. Having an honest nature, Oxen are strongly patriotic, have ideals and ambitions for life, and attach importance to family and work. These reflect traditional conservative characteristics. Women Oxen are traditional, faithful wives, who attach great importance to their children's education. Having great patience and a desire to make progress, Oxen can achieve their goals by consistent effort. They are not much influenced by others or the environment, but persist in doing things according to their ideals and capabilities.",
@@ -79,10 +80,10 @@ const ox = {
     mostCompatible: "Rat, Monkey, or Rooster.",
     leaseCompatible: "Tiger, Dragon, Horse, or Goat.",
     sound: 'sounds/02_ox.mp3',
-    image: 'graphics/02_ox.svg'
 };
 
 const tiger = {
+    image: 'graphics/02_tiger.svg',
     signName: "Tiger",
     topline: "Brave and confident...",
     description1: "People born in a year of the Tiger are brave, competitive, unpredictable, and confident. They are very charming and well-liked by others. But sometimes they are likely to be impetuous, irritable, and overindulged.",
@@ -90,10 +91,10 @@ const tiger = {
     mostCompatible: "Dragon, Horse, or Pig",
     leaseCompatible: "Ox, Tiger, Snake, or Monkey",
     sound: 'sounds/02_tiger.mp3',
-    image: 'graphics/02_tiger.svg'
 };
 
 const rabbit = {
+    image: 'graphics/04_rabbit.svg',
     signName: "Rabbit",
     topline: "Quiet and elegant...",
     description1: "Rabbits tend to be gentle, quiet, elegant, and alert as well as quick, skillful, kind, patient, and very responsible. However, they might be superficial, stubborn, melancholy, and overly-discreet. Gentlemen who belong to the Rabbit zodiac sign always treat people politely, with a gentle smile that makes people feel that they are credible and sincere. ",
@@ -101,10 +102,10 @@ const rabbit = {
     mostCompatible: "Rat, Goat, Monkey, Dog, or Pig",
     leaseCompatible: "Rooster or Snake.",
     sound: 'sounds/04_rabbit.mp3',
-    image: 'graphics/04_rabbit.svg'
 };
 
 const dragon = {
+    image: 'graphics/05_dragon.svg',
     signName: "Dragon",
     topline: "Confident and intelligent...",
     description1: "Among the Chinese zodiac animals, the dragon is the sole imaginary animal. The Chinese dragon is the most vital and powerful beast in the Chinese zodiac, although Dragons have an infamous reputation for being a hothead and possessing a sharp tongue. In ancient times, people thought that Dragons were best suited to be leaders of the world with their character traits of dominance and ambition.",
@@ -112,10 +113,10 @@ const dragon = {
     mostCompatible: "Rat, Tiger, or Snake",
     leaseCompatible: "Ox, Goat, or Dog",
     sound: 'sounds/05_dragon.mp3',
-    image: 'graphics/05_dragon.svg'
 };
 
 const snake = {
+    image: 'graphics/06_snake.svg',
     signName: "Snake",
     topline: "Intelligent and wise...",
     description1: "In Chinese culture, the Snake is the most enigmatic animal among the 12 zodiac animals. People born in a year of the Snake are supposed to be the most intuitive. Snakes tend to act according to their own judgments while remaining private and reticent. They are determined to accomplish their goals and hate to fail. Snakes represent the symbol of wisdom. They are intelligent and wise. They are good at communication but say little. Snakes are usually regarded as great thinkers.",
@@ -123,10 +124,10 @@ const snake = {
     mostCompatible: "Dragon or Rooster",
     leaseCompatible: "Tiger, Rabbit, Goat, or Pig",
     sound: 'sounds/06_snake.mp3',
-    image: 'graphics/06_snake.svg'
 };
 
 const horse = {
+    image: 'graphics/07_horse.svg',
     signName: "Horse",
     topline: "Active and energetic...",
     description1: "People born in a year of the Horse are extremely animated, active and energetic. Horses love to be in a crowd, and they can usually be seen on such occasions as concerts, theater performances, meetings, sporting events, and parties. With a deft sense of humor, Horses are masters of repartee. They love to take center stage and delight audiences everywhere.",
@@ -134,10 +135,10 @@ const horse = {
     mostCompatible: "Goat or Tiger",
     leaseCompatible: "Rat, Ox, or Rooster",
     sound: 'sounds/07_horse.mp3',
-    image: 'graphics/07_horse.svg'
 };
 
 const goat = {
+    image: 'graphics/08_goat.svg',
     signName: "Goat",
     topline: "Calm and gentle...",
     description1: "People born in a year of the Goat are generally believed to be gentle, mild-mannered, shy, stable, sympathetic, amicable, and brimming with a strong sense of kindheartedness and justice. They have very delicate thoughts, strong creativity, and perseverance, and acquire professional skills well. Although they look gentle on the surface, they are tough on the inside, always insisting on their own opinions in their minds. They have strong inner resilience and excellent defensive instincts.",
@@ -145,10 +146,10 @@ const goat = {
     mostCompatible: "Rabbit, Horse, or Pig",
     leaseCompatible: "Ox, Dragon, Snake, or Dog",
     sound: 'sounds/08_goat.mp3',
-    image: 'graphics/08_goat.svg'
 };
 
 const monkey = {
+    image: 'graphics/09_monkey.svg',
     signName: "Monkey",
     topline: "Sharp, smart, but naughty...",
     description1: "People born in a year of the Monkey have magnetic personalities and are witty and intelligent. Personality traits like mischievousness, curiosity, and cleverness make them very naughty. Monkeys are masters of practical jokes, because they like playing most of the time. Although they don't have bad intentions, their pranks sometimes hurt other people's feelings.",
@@ -156,10 +157,10 @@ const monkey = {
     mostCompatible: "Ox or Rabbit",
     leaseCompatible: "Tiger or Pig",
     sound: 'sounds/09_monkey.mp3',
-    image: 'graphics/09_monkey.svg'
 };
 
 const rooster = {
+    image: 'graphics/10_rooster.svg',
     signName: "Rooster",
     topline: "Observant and hardworking...",
     description1: "Roosters are always active, amusing, and popular within a crowd. Roosters are talkative, outspoken, frank, open, honest, and loyal individuals. They like to be the center of attention and always appear attractive and beautiful. Roosters are happiest when they are surrounded by others, whether at a party or just a social gathering. They enjoy the spotlight and will exhibit their charm on any occasion.",
@@ -167,10 +168,10 @@ const rooster = {
     mostCompatible: "Ox or Snake",
     leaseCompatible: "Rat, Rabbit, Horse, or Pig",
     sound: 'sounds/10_rooster.mp3',
-    image: 'graphics/10_rooster.svg'
 };
 
 const dog = {
+    image: 'graphics/11_dog.svg',
     signName: "Dog",
     topline: "Loyal, honest, but not good at communication...",
     description1: "Dogs are loyal and honest, amiable and kind, cautious and prudent. Due to having a strong sense of loyalty and sincerity, Dogs will do everything for the person who they think is most important. As Dogs are not good at communication, it is difficult for them to convey their thoughts to others. Therefore, Dogs tend to leave others with the impression that they have a stubborn personality.",
@@ -178,10 +179,10 @@ const dog = {
     mostCompatible: "Rabbit",
     leaseCompatible: "Dragon, Goat, or Rooster",
     sound: 'sounds/11_dog.mp3',
-    image: 'graphics/11_dog.svg'
 };
 
 const pig = {
+    image: 'graphics/12_pig.svg',
     signName: "Pig",
     topline: "Diligent, compassionate, and realistic...",
     description1: "Pigs are diligent, compassionate, and generous. They have great concentration: once they set a goal, they will devote all their energy to achieving it. Though Pigs rarely seek help from others, they will not refuse to give others a hand. Pigs never suspect trickery, so they are easily fooled.",
@@ -189,7 +190,6 @@ const pig = {
     mostCompatible: "Goat, Tiger, or Rabbit",
     leaseCompatible: "Monkey or Snake",
     sound: 'sounds/12_dog.mp3',
-    image: 'graphics/12_dog.svg'
 };
 
 function clearList() {
@@ -207,132 +207,156 @@ asideList[0].addEventListener('click', () => {
     clearList();
     asideList[0].setAttribute('id', 'asideSelected');
     asideList[0].childNodes[1].setAttribute('id', 'indicateSelected');
-    sign = 'Rat';
+    sign = rat.signName;
 });
 
 asideList[1].addEventListener('click', () => {
     clearList();
     asideList[1].setAttribute('id', 'asideSelected');
     asideList[1].childNodes[1].setAttribute('id', 'indicateSelected');
-    sign = 'Ox';
+    sign = ox.signName;
 });
 
 asideList[2].addEventListener('click', () => {
     clearList();
     asideList[2].setAttribute('id', 'asideSelected');
     asideList[2].childNodes[1].setAttribute('id', 'indicateSelected');
-    sign = 'Tiger';
+    sign = tiger.signName;
 });
 
 asideList[3].addEventListener('click', () => {
     clearList();
     asideList[3].setAttribute('id', 'asideSelected');
     asideList[3].childNodes[1].setAttribute('id', 'indicateSelected');
-    sign = 'Rabbit';
+    sign = rabbit.signName;
 });
 
 asideList[4].addEventListener('click', () => {
     clearList();
     asideList[4].setAttribute('id', 'asideSelected');
     asideList[4].childNodes[1].setAttribute('id', 'indicateSelected');
-    sign = 'Dragon';
+    sign = dragon.signName;
 });
 
 asideList[5].addEventListener('click', () => {
     clearList();
     asideList[5].setAttribute('id', 'asideSelected');
     asideList[5].childNodes[1].setAttribute('id', 'indicateSelected');
-    sign = 'Snake';
+    sign = snake.signName;
 });
 
 asideList[6].addEventListener('click', () => {
     clearList();
     asideList[6].setAttribute('id', 'asideSelected');
     asideList[6].childNodes[1].setAttribute('id', 'indicateSelected');
-    sign = 'Horse';
+    sign = horse.signName;
 });
 
 asideList[7].addEventListener('click', () => {
     clearList();
     asideList[7].setAttribute('id', 'asideSelected');
     asideList[7].childNodes[1].setAttribute('id', 'indicateSelected');
-    sign = 'Goat';
+    sign = goat.signName;
 });
 
 asideList[8].addEventListener('click', () => {
     clearList();
     asideList[8].setAttribute('id', 'asideSelected');
     asideList[8].childNodes[1].setAttribute('id', 'indicateSelected');
-    sign = 'Monkey';
+    sign = monkey.signName;
 });
 
 asideList[9].addEventListener('click', () => {
     clearList();
     asideList[9].setAttribute('id', 'asideSelected');
     asideList[9].childNodes[1].setAttribute('id', 'indicateSelected');
-    sign = 'Rooster';
+    sign = rooster.signName;
 });
 
 asideList[10].addEventListener('click', () => {
     clearList();
     asideList[10].setAttribute('id', 'asideSelected');
     asideList[10].childNodes[1].setAttribute('id', 'indicateSelected');
-    sign = 'Dog';
+    sign = dog.signName;
 });
 
 asideList[11].addEventListener('click', () => {
     clearList();
     asideList[11].setAttribute('id', 'asideSelected');
     asideList[11].childNodes[1].setAttribute('id', 'indicateSelected');
-    sign = 'Pig';
+    sign = pig.signName;
 });
 
 // Button Listeners
 
 document.querySelector('#rat').addEventListener('click', () => {
-    sign = ('rat');
+    sign = (rat.signName);
 });
 
 document.querySelector('#ox').addEventListener('click', () => {
-    sign = ('Ox');
+    sign = (ox.signName);
 });
 
 document.querySelector('#tiger').addEventListener('click', () => {
-    sign = ('Tiger');
+    sign = (tiger.signName);
 });
 
 document.querySelector('#rabbit').addEventListener('click', () => {
-    sign = ('Rabbit');
+    sign = (rabbit.signName);
 });
 
 document.querySelector('#dragon').addEventListener('click', () => {
-    sign = ('Dragon');
+    sign = (dragon.signName);
 });
 
 document.querySelector('#snake').addEventListener('click', () => {
-    sign = ('Snake');
+    sign = (snake.signName);
 });
 
 document.querySelector('#horse').addEventListener('click', () => {
-    sign = ('Horse');
+    sign = (horse.signName);
 });
 
 document.querySelector('#goat').addEventListener('click', () => {
-    sign = ('Goat');
+    sign = (goat.signName);
 });
 
 document.querySelector('#monkey').addEventListener('click', () => {
-    sign = ('Monkey');
+    sign = (monkey.signName);
 });
 
 document.querySelector('#rooster').addEventListener('click', () => {
-    sign = ('Rooster');
+    sign = (rooster.signName);
 });
 
 document.querySelector('#dog').addEventListener('click', () => {
-    sign = ('Dog');
+    sign = (dog.signName);
 });
 
 document.querySelector('#pig').addEventListener('click', () => {
-    sign = ('Pig');
+    sign = (pig.signName);
+    signOutput();
+    console.log(sign);
 });
+
+function signOutput() {
+    const signOutput_image = document.querySelector('#image');
+    const signOutput_signName = document.querySelector('#signName');
+    const signOutput_topline = document.querySelector('#topline');
+    const signOutput_description1 = document.querySelector('#description1');
+    const signOutput_description2 = document.querySelector('#description2');
+    const signOutput_mostCompatible = document.querySelector('#mostCompatible');
+    const signOutput_leaseCompatible = document.querySelector('#leaseCompatible');
+
+    signOutput_image.src = sign.image;
+    signOutput_image.alt = sign.signName;
+    signOutput_signName.nodeValue = sign.signName;
+    console.log(signOutput_signName.nodeValue);
+}
+
+function myFunction() {
+    document.getElementById("demo").innerHTML = "Paragraph changed!";
+}
+
+const signOutput_signName = document.querySelector('#signName');
+console.log(signOutput_signName.innerHTML);
