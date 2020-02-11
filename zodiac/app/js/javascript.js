@@ -15,45 +15,48 @@ function parseYear() {
     const year = bdayArray[0];
     const month = bdayArray[1];
     const day = bdayArray[2];
-    console.log('Year: '+year+' | '+'Month: '+month+' | '+'Day: '+day);
+    console.log('Year: ' + year + ' | ' + 'Month: ' + month + ' | ' + 'Day: ' + day);
 
-// Year int converter
+    // Year int converter
 
-const yearCalc = (year-4-((Math.round((year-4)/12))*12));
+    const yearCalc = (year - 4 - ((Math.round((year - 4) / 12)) * 12));
 
-//Sign Query
+    //Sign Query
 
-if ((yearCalc == 0)) {
-    sign = 'Rat';
-} else if ((yearCalc == 1)) {
-    sign = 'Ox';
-} else if ((yearCalc == 2)) {
-    sign = 'Tiger';
-} else if ((yearCalc == 3)) {
-    sign = 'Rabbit';
-} else if ((yearCalc == 4)) {
-    sign = 'Dragon';
-} else if ((yearCalc == 5)) {
-    sign = 'Snake';
-} else if ((yearCalc == -6)) {
-    sign = 'Gorse';
-} else if ((yearCalc == -5)) {
-    sign = 'Goat';
-} else if ((yearCalc == -4)) {
-    sign = 'Monkey';
-} else if ((yearCalc == -3)) {
-    sign = 'Rooster';
-} else if ((yearCalc == -2)) {
-    sign = 'Dog';
-} else if ((yearCalc == -1)) {
-    sign = 'Pig';
-}
-console.log('Sign: '+sign);
+    if ((yearCalc == 0)) {
+        sign = 'Rat';
+    } else if ((yearCalc == 1)) {
+        sign = 'Ox';
+    } else if ((yearCalc == 2)) {
+        sign = 'Tiger';
+    } else if ((yearCalc == 3)) {
+        sign = 'Rabbit';
+    } else if ((yearCalc == 4)) {
+        sign = 'Dragon';
+    } else if ((yearCalc == 5)) {
+        sign = 'Snake';
+    } else if ((yearCalc == -6)) {
+        sign = 'Gorse';
+    } else if ((yearCalc == -5)) {
+        sign = 'Goat';
+    } else if ((yearCalc == -4)) {
+        sign = 'Monkey';
+    } else if ((yearCalc == -3)) {
+        sign = 'Rooster';
+    } else if ((yearCalc == -2)) {
+        sign = 'Dog';
+    } else if ((yearCalc == -1)) {
+        sign = 'Pig';
+    }
+    console.log('Sign: ' + sign);
 }
 
 const bdayInput = document.querySelector('#bdayInput');
 
-bdayInput.addEventListener('blur', parseYear);
+submit.addEventListener('click', (event) => {
+    event.preventDefault();
+    parseYear();
+});
 
 //Zodiac Info
 
@@ -188,3 +191,148 @@ const pig = {
     sound: 'sounds/12_dog.mp3',
     image: 'graphics/12_dog.svg'
 };
+
+function clearList() {
+    for (let i = 0; i < asideList.length; i++) {
+        asideList[i].setAttribute('id', '');
+        asideList[i].childNodes[1].setAttribute('id', '');
+    };
+}
+
+// List Listeners
+
+const asideList = document.querySelectorAll('.asideList');
+
+asideList[0].addEventListener('click', () => {
+    clearList();
+    asideList[0].setAttribute('id', 'asideSelected');
+    asideList[0].childNodes[1].setAttribute('id', 'indicateSelected');
+    sign = 'Rat';
+});
+
+asideList[1].addEventListener('click', () => {
+    clearList();
+    asideList[1].setAttribute('id', 'asideSelected');
+    asideList[1].childNodes[1].setAttribute('id', 'indicateSelected');
+    sign = 'Ox';
+});
+
+asideList[2].addEventListener('click', () => {
+    clearList();
+    asideList[2].setAttribute('id', 'asideSelected');
+    asideList[2].childNodes[1].setAttribute('id', 'indicateSelected');
+    sign = 'Tiger';
+});
+
+asideList[3].addEventListener('click', () => {
+    clearList();
+    asideList[3].setAttribute('id', 'asideSelected');
+    asideList[3].childNodes[1].setAttribute('id', 'indicateSelected');
+    sign = 'Rabbit';
+});
+
+asideList[4].addEventListener('click', () => {
+    clearList();
+    asideList[4].setAttribute('id', 'asideSelected');
+    asideList[4].childNodes[1].setAttribute('id', 'indicateSelected');
+    sign = 'Dragon';
+});
+
+asideList[5].addEventListener('click', () => {
+    clearList();
+    asideList[5].setAttribute('id', 'asideSelected');
+    asideList[5].childNodes[1].setAttribute('id', 'indicateSelected');
+    sign = 'Snake';
+});
+
+asideList[6].addEventListener('click', () => {
+    clearList();
+    asideList[6].setAttribute('id', 'asideSelected');
+    asideList[6].childNodes[1].setAttribute('id', 'indicateSelected');
+    sign = 'Horse';
+});
+
+asideList[7].addEventListener('click', () => {
+    clearList();
+    asideList[7].setAttribute('id', 'asideSelected');
+    asideList[7].childNodes[1].setAttribute('id', 'indicateSelected');
+    sign = 'Goat';
+});
+
+asideList[8].addEventListener('click', () => {
+    clearList();
+    asideList[8].setAttribute('id', 'asideSelected');
+    asideList[8].childNodes[1].setAttribute('id', 'indicateSelected');
+    sign = 'Monkey';
+});
+
+asideList[9].addEventListener('click', () => {
+    clearList();
+    asideList[9].setAttribute('id', 'asideSelected');
+    asideList[9].childNodes[1].setAttribute('id', 'indicateSelected');
+    sign = 'Rooster';
+});
+
+asideList[10].addEventListener('click', () => {
+    clearList();
+    asideList[10].setAttribute('id', 'asideSelected');
+    asideList[10].childNodes[1].setAttribute('id', 'indicateSelected');
+    sign = 'Dog';
+});
+
+asideList[11].addEventListener('click', () => {
+    clearList();
+    asideList[11].setAttribute('id', 'asideSelected');
+    asideList[11].childNodes[1].setAttribute('id', 'indicateSelected');
+    sign = 'Pig';
+});
+
+// Button Listeners
+
+document.querySelector('#rat').addEventListener('click', () => {
+    sign = ('rat');
+});
+
+document.querySelector('#ox').addEventListener('click', () => {
+    sign = ('Ox');
+});
+
+document.querySelector('#tiger').addEventListener('click', () => {
+    sign = ('Tiger');
+});
+
+document.querySelector('#rabbit').addEventListener('click', () => {
+    sign = ('Rabbit');
+});
+
+document.querySelector('#dragon').addEventListener('click', () => {
+    sign = ('Dragon');
+});
+
+document.querySelector('#snake').addEventListener('click', () => {
+    sign = ('Snake');
+});
+
+document.querySelector('#horse').addEventListener('click', () => {
+    sign = ('Horse');
+});
+
+document.querySelector('#goat').addEventListener('click', () => {
+    sign = ('Goat');
+});
+
+document.querySelector('#monkey').addEventListener('click', () => {
+    sign = ('Monkey');
+});
+
+document.querySelector('#rooster').addEventListener('click', () => {
+    sign = ('Rooster');
+});
+
+document.querySelector('#dog').addEventListener('click', () => {
+    sign = ('Dog');
+});
+
+document.querySelector('#pig').addEventListener('click', () => {
+    sign = ('Pig');
+});

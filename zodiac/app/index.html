@@ -16,12 +16,12 @@
     <header>
         <h1>Chinese Zodiac Signs</h1>
     </header>
-    <div id="helpButton"><img src="graphics/help.svg" alt="Help Icon"></div>
+    <div id="helpButton" class="welcomeToggle"><img src="graphics/help.svg" alt="Help Icon"></div>
     <div class="row">
         <div class="row1">
             <ul>
                 <li>
-                    <h2>01</h2>
+                    <h2 id="test">01</h2>
                 </li>
                 <li>
                     <h2>02</h2>
@@ -60,52 +60,52 @@
         </div>
         <div class="row2">
             <ul>
-                <li class="asideList" id="asideSelected">
-                    <div class="asideIndicator" id="indicateSelected">&nbsp;</div><img src="graphics/01_rat.svg" alt="Rat">
+                <li class="asideList">
+                    <div class="asideIndicator"></div><img src="graphics/01_rat.svg" alt="Rat">
                     <h2>rat</h2>
                 </li>
                 <li class="asideList">
-                    <div class="asideIndicator">&nbsp;</div><img src="graphics/02_ox.svg" alt="Ox">
+                    <div class="asideIndicator"></div><img src="graphics/02_ox.svg" alt="Ox">
                     <h2>ox</h2>
                 </li>
                 <li class="asideList">
-                    <div class="asideIndicator">&nbsp;</div><img src="graphics/03_tiger.svg" alt="Tiger">
+                    <div class="asideIndicator"></div><img src="graphics/03_tiger.svg" alt="Tiger">
                     <h2>tiger</h2>
                 </li>
                 <li class="asideList">
-                    <div class="asideIndicator">&nbsp;</div><img src="graphics/04_rabbit.svg" alt="Rabbit">
+                    <div class="asideIndicator"></div><img src="graphics/04_rabbit.svg" alt="Rabbit">
                     <h2>rabbit</h2>
                 </li>
                 <li class="asideList">
-                    <div class="asideIndicator">&nbsp;</div><img src="graphics/05_dragon.svg" alt="Dragon">
+                    <div class="asideIndicator"></div><img src="graphics/05_dragon.svg" alt="Dragon">
                     <h2>dragon</h2>
                 </li>
                 <li class="asideList">
-                    <div class="asideIndicator">&nbsp;</div><img src="graphics/06_snake.svg" alt="Snake">
+                    <div class="asideIndicator"></div><img src="graphics/06_snake.svg" alt="Snake">
                     <h2>snake</h2>
                 </li>
                 <li class="asideList">
-                    <div class="asideIndicator">&nbsp;</div><img src="graphics/07_horse.svg" alt="Horse">
+                    <div class="asideIndicator"></div><img src="graphics/07_horse.svg" alt="Horse">
                     <h2>horse</h2>
                 </li>
                 <li class="asideList">
-                    <div class="asideIndicator">&nbsp;</div><img src="graphics/08_goat.svg" alt="Goat">
+                    <div class="asideIndicator"></div><img src="graphics/08_goat.svg" alt="Goat">
                     <h2>goat</h2>
                 </li>
                 <li class="asideList">
-                    <div class="asideIndicator">&nbsp;</div><img src="graphics/09_monkey.svg" alt="Monkey">
+                    <div class="asideIndicator"></div><img src="graphics/09_monkey.svg" alt="Monkey">
                     <h2>monkey</h2>
                 </li>
                 <li class="asideList">
-                    <div class="asideIndicator">&nbsp;</div><img src="graphics/10_rooster.svg" alt="Rooster">
+                    <div class="asideIndicator"></div><img src="graphics/10_rooster.svg" alt="Rooster">
                     <h2>rooster</h2>
                 </li>
                 <li class="asideList">
-                    <div class="asideIndicator">&nbsp;</div><img src="graphics/11_dog.svg" alt="Dog">
+                    <div class="asideIndicator"></div><img src="graphics/11_dog.svg" alt="Dog">
                     <h2>dog</h2>
                 </li>
                 <li class="asideList">
-                    <div class="asideIndicator">&nbsp;</div><img src="graphics/12_pig.svg" alt="Pig">
+                    <div class="asideIndicator"></div><img src="graphics/12_pig.svg" alt="Pig">
                     <h2>pig</h2>
                 </li>
             </ul>
@@ -148,12 +148,12 @@
                 </li>
                 <li class="welcomeColumn_3">
                     <h3>Select any zodiac</h3>
-                    <img src="graphics/05_dragon_black.svg" alt="Dragon">
+                    <img src="graphics/05_dragonBlack.svg" alt="Dragon">
                 </li>
                 <div id="closeWelcomeWrapper">
-                    <div id="closeWelcome">
+                    <button id="closeWelcome" class="welcomeToggle">
                         <h3>Okay</h3>
-                    </div>
+                    </button>
                 </div>
             </div>
         </div>
@@ -164,10 +164,10 @@
         <span class="dot" id="dot_3"></span>
     </dots>
     <a href="https://hunterhdesign.com">
-        <div id="watermark">
+        <button id="watermark">
             <p>Created by Hunter H Design</p>
             <p>www.hunterhdesign.com</p>
-        </div>
+        </button>
     </a>
     <script src="js/javascript.js"></script>
 </body>
