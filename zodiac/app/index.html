@@ -132,8 +132,8 @@
             <button class="sign" id="dog"><img src="graphics/11_dog.svg" alt="Dog"></button>
             <button class="sign" id="pig"><img src="graphics/12_pig.svg" alt="Pig"></button>
         </div>
-        <div id="welcome" hidden>
-            <div id="welcomeBackground"></div>
+        <div class="opacityBackground"></div>
+        <div id="welcome">
             <div id="welcomeMenu">
                 <h1>WELCOME!</h1>
                 <h2>EXPLORE THE CHINESE ZODIAC SIGNS</h2>
@@ -157,15 +157,18 @@
                 </div>
             </div>
         </div>
+        <div class="opacityBackground" hidden></div>
+        <div class="outputWrap" hidden>
         <div id="signOutput">
+            <h1 id="signName"></h1>
             <img id="image" src="" alt="">
-            <h1 id="signName">Place Holder</h1>
             <h2 id="topline"></h2>
             <p id="description1"></p>
             <p id="description2"></p>
             <h2 id="mostCompatible"></h2>
-            <h2 id="leaseCompatible"></h2>
+            <h2 id="leastCompatible"></h2>
         </div>
+    </div>
     </main>
     <dots>
         <span class="dot" id="dot_1"></span>
