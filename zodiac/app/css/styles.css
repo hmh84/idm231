@@ -247,7 +247,7 @@ div.spacer {
     display: grid;
     grid-template-areas:
         ". pig rat ox ."
-        "dog . . . tiger"
+        "dog . upCenter . tiger"
         "rooster . center . rabbit"
         "monkey . . . dragon"
         ". goat horse snake .";
@@ -340,6 +340,12 @@ button.sign:hover {
 
 /* Inputs */
 
+form {
+    position: relative;
+    grid-area: upCenter;
+    top: 5rem;
+}
+
 ::placeholder {
     /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: black;
@@ -358,9 +364,9 @@ button.sign:hover {
 }
 
 #bdayInput {
-    grid-area: center;
     background-color: #ffffff80;
     position: relative;
+    top: .5rem;
     align-self: center;
     width: 14rem;
     padding: .5rem;
@@ -369,13 +375,12 @@ button.sign:hover {
 }
 
 #submit {
-    grid-area: center;
     background-color: #ffffff80;
     position: relative;
+    top: 2rem;
     align-self: center;
     width: 100%;
     padding: .5rem;
-    top: 45%;
     border-radius: .5rem;
 }
 
