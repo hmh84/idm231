@@ -7,7 +7,7 @@ const welcomeMenu = document.querySelector('#welcome');
 
 closeButton.addEventListener('click', () => {
     opacityBackground.hidden = true;
-    welcomeMenu.hidden= true;
+    welcomeMenu.hidden = true;
 })
 
 helpButton.addEventListener('click', () => {
@@ -229,7 +229,7 @@ const button = document.querySelectorAll('.sign');
 
 for (let i = 0; i < 12; i++) {
 
-    button[i+1].addEventListener('click', () => {
+    button[i + 1].addEventListener('click', () => {
         sign = signs[i];
         signOutput();
     });
@@ -252,8 +252,8 @@ function signOutput() {
     signOutput_topline.innerHTML = sign.topline;
     signOutput_description1.innerHTML = sign.description1;
     signOutput_description2.innerHTML = sign.description2;
-    signOutput_mostCompatible.innerHTML = 'Most Compatible With: '+sign.mostCompatible;
-    signOutput_leastCompatible.innerHTML = 'Least Compatible With: '+sign.leastCompatible;
+    signOutput_mostCompatible.innerHTML = 'Most Compatible With: ' + sign.mostCompatible;
+    signOutput_leastCompatible.innerHTML = 'Least Compatible With: ' + sign.leastCompatible;
 
     opacityBackground.hidden = false;
     signOutputDiv.hidden = false;
@@ -267,5 +267,6 @@ const signOutputDiv = document.querySelector('.outputWrap');
 opacityBackground.addEventListener('click', () => {
     opacityBackground.hidden = true;
     signOutputDiv.hidden = true;
-    welcomeMenu.hidden= true;
+    welcomeMenu.hidden = true;
+    clearList();
 });

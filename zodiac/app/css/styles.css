@@ -14,7 +14,7 @@ html {
 }
 
 html {
-    background-color: #E02020;
+    background-color: rgb(218, 26, 26);
     background-repeat: repeat;
     background-size: 472px 472px;
     background-image: url("../graphics/pattern.svg");
@@ -127,13 +127,13 @@ div.spacer {
 }
 
 .row2 li {
-    background-color: rgba(0, 0, 0, 50%);
+    background-color: rgba(0, 0, 0, 0.8);
     width: 100%;
     min-width: 210px;
 }
 
 #asideSelected {
-    background-color: rgba(255, 72, 72, 75%);
+    background-color: rgba(220, 20, 60, .8);
     width: 100%;
     min-width: 210px;
 }
@@ -187,7 +187,7 @@ div.spacer {
 
 #wheelBg {
     grid-area: center;
-    background-color: #00000080;
+    background-color: rgba(0, 0, 0, .8);
     width: 40rem;
     height: 40rem;
     align-self: center;
@@ -204,15 +204,11 @@ div.spacer {
     color: #fff;
     position: fixed;
     display: block;
-    right: 0;
+    right: -1rem;
     bottom: 50px;
-    width: 275px;
+    width: 291px;
     height: 70px;
-    background-color: rgba(0, 0, 0, 50%);
-}
-
-#watermark:hover {
-    width: 300px;
+    background-color: rgba(0, 0, 0, .8);
 }
 
 #watermark a {
@@ -232,11 +228,6 @@ div.spacer {
     right: 5%;
     width: 75px;
     height: 75px;
-}
-
-#helpButton:hover {
-    width: 90px;
-    height: 90px;
 }
 
 /* Sign Container */
@@ -276,10 +267,6 @@ button.sign img {
     display: block;
     z-index: 10;
     position: absolute;
-}
-
-button.sign:hover {
-    width: 120px;
 }
 
 #rat {
@@ -382,11 +369,6 @@ form {
     width: 100%;
     padding: .5rem;
     border-radius: .5rem;
-}
-
-#submit:hover {
-    background-color: #37373793;
-    color: white;
 }
 
 input[type="submit"] {
@@ -492,7 +474,7 @@ input[type="submit"] {
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 50%);
+    background-color: rgba(0, 0, 0, .8);
 }
 
 #signOutput {
@@ -523,4 +505,33 @@ input[type="submit"] {
     top: 3rem;
     right: 3rem;
     transform: translateY(20%);
+}
+
+/* Hover States */
+
+.sign, #watermark, #helpButton, .asideList, #closeWelcome, #submit {
+    transition: all .2s ease-in-out;
+    -webkit-transition: all .2s ease-in-out;
+    cursor: pointer;
+}
+
+.sign:hover, #helpButton:hover {
+    transform: scale(1.05);
+}
+
+#watermark:hover {
+    transform: translateX(-1rem);
+}
+
+.asideList:hover {
+    transform: scale(1.05);
+}
+
+#closeWelcome:hover {
+    background-color: rgb(114, 12, 32);
+}
+
+#submit:hover {
+    background-color: #37373793;
+    color: white;
 }
