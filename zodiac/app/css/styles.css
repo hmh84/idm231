@@ -2,536 +2,421 @@
     font-family: 'Roboto', sans-serif;
 }
 
-html {
-    box-sizing: border-box;
-    font-size: 100%;
-}
+:root {
+    --light-red: #C13340;
+    --medium-red: #A92D38;
+    --dark-red: #70272b;
 
-*,
-*:before,
-*:after {
-    box-sizing: inherit;
+    --opacity: rgba(0, 0, 0, 0.5);
 }
 
 html {
-    background-color: rgb(218, 26, 26);
-    background-repeat: repeat;
-    background-size: 472px 472px;
-    background-image: url("../graphics/pattern.svg");
+    background-color: var(--light-red);
+    color: white;
 }
 
 body {
-    /* background-color: #E02020; */
-    color: white;
-    font-size: 1.4rem;
+    padding: 0 5%;
 }
-
-header {
-    margin-left: 25%;
-    font-size: 2rem;
-    width: -webkit-fill-available;
-    height: fit-content;
-    top: -1%;
-    text-decoration: overline underline;
-    text-align: -webkit-center;
-}
-
-.row li {
-    width: 50%;
-    height: 100%;
-}
-
-.row li a {
-    padding: 32px;
-}
-
-ul.navbar li {
-    float: left;
-}
-
-a {
-    text-decoration: none;
-    display: block;
-    width: fit-content;
-    height: 100%;
-}
-
-div.spacer {
-    height: 100px;
-}
-
-/* Rows */
-
-.row {
-    width: 25%;
-    display: inline-flex;
-    text-transform: uppercase;
-    float: left;
-    overflow-y: scroll;
-    top: 0;
-    bottom: 0;
-    max-height: 100%;
-    position: fixed;
-    margin-top: 6.25%;
-    min-width: 250px;
-}
-
-.row li {
-    margin-bottom: 25px;
-    height: 75px;
-}
-
-.row1 {
-    width: 25%;
-    text-align: -webkit-center;
-    display: block;
-}
-
-.row1 li {
-    height: 75px;
-    width: auto;
-}
-
-.row1 h2 {
-    font-size: 2rem;
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.row2 {
-    display: block;
-    width: 75%;
-}
-
-.row2 img {
-    float: left;
-    margin: 0 12.5px;
-    width: 50px;
-    font-size: 2rem;
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.row2 ul {
-    width: 100%;
-}
-
-.row2 h2 {
-    position: relative;
-    float: left;
-    max-width: 70%;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.row2 li {
-    background-color: rgba(0, 0, 0, 0.8);
-    width: 100%;
-    min-width: 210px;
-}
-
-#asideSelected {
-    background-color: rgba(220, 20, 60, .8);
-    width: 100%;
-    min-width: 210px;
-}
-
-.asideIndicator {
-    position: relative;
-    background-color: #FF4848;
-    float: left;
-    width: 4%;
-    height: 100%;
-}
-
-#indicateSelected {
-    position: relative;
-    background-color: #fff;
-    float: left;
-    width: 4%;
-    height: 100%;
-}
-
-/* Background Graphics & Dots */
-
-.dot {
-    background-color: black;
-    border-radius: 50%;
-    display: inline-block;
-    position: fixed;
-    z-index: -10;
-}
-
-#dot_1 {
-    height: 250px;
-    width: 250px;
-    left: 360px;
-    top: -160px;
-}
-
-#dot_2 {
-    height: 600px;
-    width: 600px;
-    left: -150px;
-    bottom: -400px;
-}
-
-#dot_3 {
-    height: 300px;
-    width: 300px;
-    right: -165px;
-    top: 200px;
-}
-
-#wheelBg {
-    grid-area: center;
-    background-color: rgba(0, 0, 0, .8);
-    width: 40rem;
-    height: 40rem;
-    align-self: center;
-    top: -1rem;
-    border-radius: 50%;
-    z-index: -10;
-}
-
-/* Watermark */
-
-#watermark {
-    z-index: 10;
-    font-size: 1.2rem;
-    color: #fff;
-    position: fixed;
-    display: block;
-    right: -1rem;
-    bottom: 50px;
-    width: 291px;
-    height: 70px;
-    background-color: rgba(0, 0, 0, .8);
-}
-
-#watermark a {
-    position: relative;
-    color: fff;
-}
-
-#watermark p {
-    position: relative;
-    padding-left: 5%;
-}
-
-#helpButton {
-    position: fixed;
-    z-index: 10;
-    top: 5%;
-    right: 5%;
-    width: 75px;
-    height: 75px;
-}
-
-/* Sign Container */
-
-.signContainer {
-    height: 40.25rem;
-    width: 40.25rem;
-    display: grid;
-    grid-template-areas:
-        ". pig rat ox ."
-        "dog . upCenter . tiger"
-        "rooster . center . rabbit"
-        "monkey . . . dragon"
-        ". goat horse snake .";
-    grid-template-columns: repeat(5, 20%);
-    grid-template-rows: repeat(5, 20%);
-    justify-items: center;
-    position: relative;
-    margin-left: 39%;
-}
-
-.sign {
-    display: block;
-    width: 6.25rem;
-    position: relative;
-    background: none;
-    border: none;
-    padding: 0;
-}
-
-button {
-    height: fit-content;
-    width: fit-content;
-}
-
-button.sign img {
-    display: block;
-    z-index: 10;
-    position: absolute;
-}
-
-#rat {
-    grid-area: rat;
-}
-
-#ox {
-    grid-area: ox;
-    top: 2.3625rem;
-}
-
-#tiger {
-    grid-area: tiger;
-    right: 2.3625rem;
-}
-
-#rabbit {
-    grid-area: rabbit;
-}
-
-#dragon {
-    grid-area: dragon;
-    right: 2.3625rem;
-}
-
-#snake {
-    grid-area: snake;
-    bottom: 2.3625rem;
-}
-
-#horse {
-    grid-area: horse;
-}
-
-#goat {
-    grid-area: goat;
-    bottom: 2.3625rem;
-}
-
-#monkey {
-    grid-area: monkey;
-    left: 2.3625rem;
-}
-
-#rooster {
-    grid-area: rooster;
-}
-
-#dog {
-    grid-area: dog;
-    left: 2.3625rem;
-}
-
-#pig {
-    grid-area: pig;
-    top: 2.3625rem;
-}
-
-/* Inputs */
 
 form {
-    position: relative;
-    grid-area: upCenter;
-    top: 5rem;
+    margin-bottom: 4rem;
+}
+
+form input {
+    display: inline-block;
+    width: 5rem;
+    height: 2rem;
+    margin: 0 .5rem;
+    text-align: center;
+    background-color: var(--medium-red);
+    color: white;
+}
+
+form h2 {
+    display: inline-block;
 }
 
 ::placeholder {
     /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: black;
+    color: white;
     opacity: 1;
     /* Firefox */
 }
 
 :-ms-input-placeholder {
     /* Internet Explorer 10-11 */
-    color: black;
+    color: white;
 }
 
 ::-ms-input-placeholder {
     /* Microsoft Edge */
-    color: black;
-}
-
-#bdayInput {
-    background-color: #ffffff80;
-    position: relative;
-    top: .5rem;
-    align-self: center;
-    width: 14rem;
-    padding: .5rem;
-    border-radius: .5rem;
-    text-align: center;
-}
-
-#submit {
-    background-color: #ffffff80;
-    position: relative;
-    top: 2rem;
-    align-self: center;
-    width: 100%;
-    padding: .5rem;
-    border-radius: .5rem;
-}
-
-input[type="submit"] {
-    cursor: pointer;
-}
-
-#inputLabel {
-    grid-area: center;
-    width: max-content;
-}
-
-/*Welcome Page*/
-
-#welcomeMenu {
-    position: fixed;
-    z-index: 30;
-    left: 20vw;
-    top: 20vh;
-    width: 60vw;
-    height: 60vh;
-    background-color: white;
-    color: darkred;
-    border-radius: 2rem;
-}
-
-#welcome h1,
-#welcome h2 {
-    margin: 1.5rem 3rem;
-    text-align: center;
-}
-
-#welcome h4 {
-    margin: 0 3rem 2rem;
-    font-size: 1rem;
-}
-
-#welcomeColumn {
-    position: relative;
-    width: 100%;
-}
-
-.welcomeColumn_1,
-.welcomeColumn_2,
-.welcomeColumn_3 {
-    text-align: center;
-    margin: auto;
-    height: 56%;
-}
-
-.welcomeColumn_1,
-.welcomeColumn_3 {
-    position: relative;
-    width: 45%;
-    float: left;
-    padding: 1rem;
-}
-
-.welcomeColumn_2 {
-    position: relative;
-    width: 10%;
-    float: left;
-    padding: 1rem;
-}
-
-.welcomeColumn_1,
-.welcomeColumn_3 {
-    font-size: 1rem;
-}
-
-.welcomeColumn_1 img {
-    width: 150px;
-    transform: translateY(200%);
-}
-
-.welcomeColumn_3 img {
-    width: 100px;
-    transform: translateY(50%);
-}
-
-#closeWelcomeWrapper {
-    position: absolute;
-    text-align: center;
-    width: 100%;
-    bottom: 1rem;
-    display: flex;
-    justify-content: center;
-}
-
-#closeWelcome {
-    width: 8rem;
-    height: 2.5rem;
-    border-radius: 1.2rem;
-    background-color: crimson;
     color: white;
 }
 
-/* Sign Output Page */
-
-.opacityBackground {
-    position: fixed;
-    z-index: 15;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, .8);
+input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+    background-color: var(--medium-red);
 }
 
-#signOutput {
+/* Header */
+
+header {
+    height: 8rem;
+    text-align: center;
+    font-size: 2rem;
+}
+
+header button {
     position: fixed;
-    z-index: 30;
-    left: 20vw;
-    top: 20vh;
+    top: 0;
+    right: 0;
+    width: 5rem;
+    background: none;
+    margin: 3rem;
+    fill: white;
+}
+
+#line {
+    width: 60%;
+    height: .2rem;
+    background-color: white;
+    margin: auto;
+    transform: translateY(-1.5rem);
+}
+
+form {
+    width: 100%;
+    text-align: center;
+}
+
+#signButtons {
+    width: 100%;
+    height: 25rem;
+    margin: auto;
+    display: grid;
+    grid-template-areas:
+        "rat . tiger . dragon . horse . monkey . dog ."
+        ". ox . rabbit . snake . goat . rooster . pig";
+    grid-template-columns: repeat(12, 8.33%);
+    grid-template-rows: repeat(2, 25%);
+}
+
+#signButtons button {
+    width: 100%;
+    padding: auto 1rem;
+    background-color: var(--medium-red);
+    border: .1rem solid var(--medium-red);
+    border-radius: 50%;
+    width: 7rem;
+    height: 7rem;
+}
+
+#signButtons button svg {
+    width: 50%;
+    height: 50%;
+    margin: auto;
+    text-align: center;
+    fill: white;
+}
+
+#signTitles {
+    width: 100%;
+    display: grid;
+    margin: auto;
+    grid-template-areas:
+    "rat_list ox_list tiger_list rabbit_list dragon_list snake_list horse_list goat_list monkey_list rooster_list dog_list pig_list";
+    transform: translateY(-5rem);
+}
+
+#signTitles button {
+    color: white;
+    background: none;
+    height: 3rem;
+}
+
+#signTitles button div {
+    position: relative;
+    margin: auto;
+    margin-top: .2rem;
+    bottom: 0;
+    width: 75%;
+    height: 10%;
+    background-color: var(--opacity);
+}
+
+#rat {
+    grid-area: rat;
+}
+
+#rat_list {
+    grid-area: rat_list;
+}
+
+#ox {
+    grid-area: ox;
+}
+
+#ox_list {
+    grid-area: ox_list;
+}
+
+#tiger {
+    grid-area: tiger;
+}
+
+#tiger_list {
+    grid-area: tiger_list;
+}
+
+#rabbit {
+    grid-area: rabbit;
+}
+
+#rabbit_list {
+    grid-area: rabbit_list;
+}
+
+#dragon {
+    grid-area: dragon;
+}
+
+#dragon_list {
+    grid-area: dragon_list;
+}
+
+#snake {
+    grid-area: snake;
+}
+
+#snake_list {
+    grid-area: snake_list;
+}
+
+#horse {
+    grid-area: horse;
+}
+
+#horse_list {
+    grid-area: horse_list;
+}
+
+#goat {
+    grid-area: goat;
+}
+
+#goat_list {
+    grid-area: goat_list;
+}
+
+#monkey {
+    grid-area: monkey;
+}
+
+#monkey_list {
+    grid-area: monkey_list;
+}
+
+#rooster {
+    grid-area: rooster;
+}
+
+#rooster_list {
+    grid-area: rooster_list;
+}
+
+#dog {
+    grid-area: dog;
+}
+
+#dog_list {
+    grid-area: dog_list;
+}
+
+#pig {
+    grid-area: pig;
+}
+
+#pig_list {
+    grid-area: pig_list;
+}
+
+#watermark {
+    position: fixed;
+    right: 0;
+    bottom: 5%;
+}
+
+#watermark button {
+    background-color: var(--opacity);
+    color: white;
+    padding: 1rem 2rem;
+}
+
+/* Modal */
+
+#opacityBackdrop {
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vw;
+    background-color: var(--opacity);
+}
+
+#modalWrap {
+    position: fixed;
+    z-index: 20;
+    top: 0;
+    left: 0;
     width: 60vw;
     height: 60vh;
-    background-color: #fff;
-    border-radius: 2rem;
+    margin: 20vh 20vw;
+    background-color: white;
     color: black;
+    text-align: center;
+    border-radius: 1rem;
+}
+
+/* Welcome Screen */
+
+#welcomeMenu, #signOutput {
+    height: 100%;
+    width: 100%;
     padding: 3rem;
     overflow-y: scroll;
 }
 
-#signOutput img, #signOutput h1, #signOutput h2, #signOutput p {
-    margin: 0 0 2rem 0;
+#modalWrap h1, #modalWrap h2, #modalWrap h3, #modalWrap h4, #modalWrap img, #modalWrap button, #modalWrap p {
+    margin: 1.5rem 0;
 }
 
-#signOutput h2:last-child {
+#modalWrap h1 {
+    width: 100%;
+    /* height: 4rem; */
+    transform: translateY(50%);
     margin: 0;
 }
 
+#welcomeMenu h1, #welcomeMenu h4 {
+    width: 100%;
+}
+
+#welcomeMenu h3, #welcomeMenu img {
+    width: 50%;
+    float: left;
+}
+
+.buttonWrap {
+    width: 100%;
+    margin: 2.5rem auto 0;
+}
+
+#modalWrap button {
+    background-color: var(--light-red);
+    color: white;
+    padding: .75rem 1.25rem;
+    margin: 0;
+    border-radius: .25rem;
+}
+
+#mm-dd-yyyy {
+    height: 2rem;
+    transform: translateY(50%);
+}
+
+/* Sign Output */
+
+#signOutput h1, #signOutput h3, #signOutput p {
+    text-align: left;
+}
+
+#signOutput h1 {
+    width: 80%;
+    float: left;
+}
+
 #signOutput img {
-    height: 6rem;
-    position: absolute;
-    top: 3rem;
-    right: 3rem;
-    transform: translateY(20%);
+    width: 20%;
+    float: left;
+}
+
+#signOutput h2 {
+    width: 100%;
+    font-size: 1.5rem;
+}
+
+#signOutput img {
+    height: 4rem;
+}
+
+#welcomeGraphic {
+    height: 4rem;
+}
+
+.signLinks {
+    text-transform: capitalize;
 }
 
 /* Hover States */
 
-.sign, #watermark, #helpButton, .asideList, #closeWelcome, #submit {
+#signTitles button, #signTitles button div, #signButtons button, #bdayInput, #submit, #watermark button, header button, #modalWrap button, #opacityBackdrop:hover {
     transition: all .2s ease-in-out;
     -webkit-transition: all .2s ease-in-out;
     cursor: pointer;
 }
 
-.sign:hover, #helpButton:hover {
-    transform: scale(1.05);
+header h1 {
+    cursor: default;
 }
 
-#watermark:hover {
-    transform: translateX(-1rem);
+#signTitles button:hover .indicator {
+    background-color: white;
 }
 
-.asideList:hover {
-    transform: scale(1.05);
+#signButtons button:hover, header button:hover {
+    transform: scale(1.1);
 }
 
-#closeWelcome:hover {
-    background-color: rgb(114, 12, 32);
+#signButtons button:hover {
+    border: .1rem solid white;
 }
 
-#submit:hover {
-    background-color: #37373793;
-    color: white;
+#bdayInput:hover, #submit:hover, #modalWrap button:hover {
+    background-color: var(--dark-red);
+}
+
+#bdayInput:hover {
+    cursor: text;
+}
+
+#watermark button:hover {
+    padding-right: 3rem;
+}
+
+#prevArrow, #nextArrow {
+    position: fixed;
+    width: 5rem;
+    height: 5rem;
+    top: 50%;
+    left: 5%;
+    transform: translateY(-2rem);
+    padding: 0;
+    margin: 0;
+    background-color: white;
+}
+
+#prevArrow img {
+    transform: rotateZ(180deg);
+}
+
+#nextArrow {
+    left: 85%;
+}
+
+#prevArrow img, #nextArrow img {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
 }

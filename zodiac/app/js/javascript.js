@@ -1,19 +1,36 @@
 //Welcome Screen
 
+const closeButton1 = document.querySelector('#closeModal1');
+const closeButton2 = document.querySelector('#closeModal2');
 const helpButton = document.querySelector('#helpButton');
-const closeButton = document.querySelector('#closeWelcome');
-const welcomeMenu = document.querySelector('#welcome');
+const opacityBackdrop = document.querySelector('#opacityBackdrop');
+const modalWrap = document.querySelector('#modalWrap');
+const welcomeMenu = document.querySelector('#welcomeMenu');
 
+closeButton1.addEventListener('click', closeModal);
+closeButton2.addEventListener('click', closeModal);
 
-closeButton.addEventListener('click', () => {
-    opacityBackground.hidden = true;
+function closeModal() {
+    opacityBackdrop.hidden = true;
+    modalWrap.hidden = true;
     welcomeMenu.hidden = true;
-})
+    signOutputDiv.hidden = true;
+    clearOutput();
+}
 
-helpButton.addEventListener('click', () => {
-    opacityBackground.hidden = false;
+helpButton.addEventListener('click', openWelcome);
+
+function openWelcome() {
+    opacityBackdrop.hidden = false;
+    modalWrap.hidden = false;
     welcomeMenu.hidden = false;
-})
+}
+
+function openSignOutput() {
+    opacityBackdrop.hidden = false;
+    modalWrap.hidden = false;
+    signOutputDiv.hidden = false;
+}
 
 function parseYear() {
     const bdayValue = bdayInput.value;
@@ -74,7 +91,7 @@ const rat = {
     description1: "According to the Chinese zodiac story, in the competition held by the Jade Emperor to decide the zodiac animals, the quick-witted rat asked the diligent ox to take him on a ride to cross the river and jumped down before the ox crossed the finish line, so the rat won the race and became the first of the zodiac animals.",
     description2: "Rats are quick-witted, resourceful, and smart but lack courage. With rich imaginations and sharp observations, they can take advantage of various opportunities well. In Chinese culture, rats represent working diligently and thriftiness, so people born in a Rat year are thought to be wealthy and prosperous.",
     mostCompatible: "Ox, Rabbit, or Dragon",
-    leastCompatible: "Horse or Rooster",
+    leastCompatible: "<a class='signLinks' href='#'>horse</a> or Rooster",
     sound: 'sounds/01_rat.mp3',
 };
 
@@ -199,53 +216,72 @@ const pig = {
     sound: 'sounds/12_dog.mp3',
 };
 
-function clearList() {
-    for (let i = 0; i < asideList.length; i++) {
-        asideList[i].setAttribute('id', '');
-        asideList[i].childNodes[1].setAttribute('id', '');
-    };
-}
-
 const signs = [rat, ox, tiger, rabbit, dragon, snake, horse, goat, monkey, rooster, dog, pig];
 
 // List Listener Loop
 
-const asideList = document.querySelectorAll('.asideList');
+const signTitles = document.querySelectorAll('#signTitles button');
 
 for (let i = 0; i < 12; i++) {
 
-    asideList[i].addEventListener('click', () => {
-        clearList();
-        asideList[i].setAttribute('id', 'asideSelected');
-        asideList[i].childNodes[1].setAttribute('id', 'indicateSelected');
+    signTitles[i].addEventListener('click', () => {
         sign = signs[i];
         signOutput();
     });
 };
 
-// Button Listener Loop
+// Sign Buttons Listener Loop
 
-const button = document.querySelectorAll('.sign');
+const signButtons = document.querySelectorAll('#signButtons button');
 
 for (let i = 0; i < 12; i++) {
 
-    button[i + 1].addEventListener('click', () => {
+    signButtons[i].addEventListener('click', () => {
         sign = signs[i];
         signOutput();
     });
 };
+
+for (let i = 0; i < 12; i++) {
+
+    signButtons[i].addEventListener('click', () => {
+        sign = signs[i];
+        signOutput();
+    });
+};
+
+// Arrow Listener
+
+// const prevArrow = document.querySelector('#prevArrow');
+// const nextArrow = document.querySelector('#nextArrow');
+
+// prevArrow.addEventListener('click', () => {
+//     sign = signs[-1];
+//     signOutput();
+// });
 
 // Output Function
 
-function signOutput() {
-    const signOutput_image = document.querySelector('#image');
-    const signOutput_signName = document.querySelector('#signName');
-    const signOutput_topline = document.querySelector('#topline');
-    const signOutput_description1 = document.querySelector('#description1');
-    const signOutput_description2 = document.querySelector('#description2');
-    const signOutput_mostCompatible = document.querySelector('#mostCompatible');
-    const signOutput_leastCompatible = document.querySelector('#leastCompatible');
+const signOutput_image = document.querySelector('#image');
+const signOutput_signName = document.querySelector('#signName');
+const signOutput_topline = document.querySelector('#topline');
+const signOutput_description1 = document.querySelector('#description1');
+const signOutput_description2 = document.querySelector('#description2');
+const signOutput_mostCompatible = document.querySelector('#mostCompatible');
+const signOutput_leastCompatible = document.querySelector('#leastCompatible');
 
+function clearOutput() {
+signOutput_image.src = '';
+signOutput_image.alt = '';
+signOutput_signName.innerHTML = '';
+signOutput_topline.innerHTML = '';
+signOutput_description1.innerHTML = '';
+signOutput_description2.innerHTML = '';
+signOutput_mostCompatible.innerHTML = '';
+signOutput_leastCompatible.innerHTML = '';
+}
+
+function signOutput() {    
     signOutput_image.src = sign.image;
     signOutput_image.alt = sign.signName;
     signOutput_signName.innerHTML = sign.signName;
@@ -255,18 +291,22 @@ function signOutput() {
     signOutput_mostCompatible.innerHTML = 'Most Compatible With: ' + sign.mostCompatible;
     signOutput_leastCompatible.innerHTML = 'Least Compatible With: ' + sign.leastCompatible;
 
-    opacityBackground.hidden = false;
-    signOutputDiv.hidden = false;
+    openSignOutput();
+
+    // const signLinks = document.querySelectorAll('.signLinks');
+    // console.log(signLinks[0].textContent);
+
+    // signLinks.addEventListener('click', () => {
+    //     sign = signLinks[0].textContent;
+    // });
+
 }
 
 // Remove Output div
 
-const opacityBackground = document.querySelector('.opacityBackground');
-const signOutputDiv = document.querySelector('.outputWrap');
+const signOutputDiv = document.querySelector('#signOutput');
 
-opacityBackground.addEventListener('click', () => {
-    opacityBackground.hidden = true;
-    signOutputDiv.hidden = true;
-    welcomeMenu.hidden = true;
-    clearList();
+opacityBackdrop.addEventListener('click', () => {
+    closeModal();
+    clearOutput();
 });
