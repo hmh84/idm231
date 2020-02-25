@@ -22,8 +22,8 @@
     <main>
         <form>
             <h2>Enter your birth year:</h2>
-            <input id="bdayInput" name="bdayInput" placeholder="YYYY" required input maxlength="4">
-            <input id="submit" type="submit" value="Submit">
+            <input id="bdayInput" name="bdayInput" placeholder="YYYY" required maxlength="4">
+            <input id="submit" for="bdayInput" type="submit" value="Submit">
         </form>
         <div id="signButtons">
             <button id="rat"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 148 152"><g data-name="Layer 2"><g data-name="Layer 1"><g data-name="01_rat"><path d="M83 106l22-2-1-2H92c-9 0-17-1-21-10-5-10-5-20 1-30 5-7 12-8 20-7 11 2 20 7 25 16l7 8a60 60 0 016 8c4 7 7 15 12 21 12 15 3 36-14 38-20 3-39-1-57-10-14-7-28-14-44-17a50 50 0 00-14 0c-6 0-8 4-5 10a26 26 0 0012 13c11 5 21 9 33 9-14 1-28-1-39-9a38 38 0 01-12-11c-5-8-1-17 8-19a53 53 0 0119-1c16 3 31 10 46 17 16 8 32 12 50 10a41 41 0 005-1c4-1 7-4 8-8 0-6-2-10-7-12l-15-3-23-2-10-4z"/><path d="M33 85c-5-2-5-4-3-8 5-10 6-10 16-4a27 27 0 002 1l-9-19 10-2a23 23 0 0016-10l10-15c10-20 32-17 44-7 11 11 16 24 17 39v27l-2 1-14-21c-5-10-15-13-25-15a12 12 0 01-5-2l9-3 9-3c-10-2-19 2-27 7l6-10h-1L65 65c-2 2-2 6-2 9-2 7-5 10-13 8l-8-3-7-1-2 7z"/><path d="M8 41l3-1-10-9c-2-3-2-5 3-5a27 27 0 0010-4c10-6 22-11 35-8l2-7 8-7c2 0 6 0 8 2l1 7-3 6h16c-6 9-11 18-18 25-9 9-20 14-34 9l-14-5a40 40 0 00-6-1zM46 111c-1-4 2-7 5-8a38 38 0 0111-1c4 0 6-1 7-5l12 9c-3 7-9 6-15 6H51l1-3z"/><path d="M35 10l5-8 6-1 2 5a8 8 0 01-4 4l-7 1z"/></g></g></g></svg></button>
@@ -104,11 +104,11 @@
                 </div>
             </div>
             <div id="signOutput" hidden>
-                <button id="prevArrow" hidden>
-                    <img src="graphics/arrow.svg" alt="Previous Arrow">
+                <button id="prevArrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 144 144"><path d="M44 72l48 30v-9L59 72l33-21v-9z"/></svg>
                 </button>
-                <button id="nextArrow" hidden>
-                    <img src="graphics/arrow.svg" alt="Next Arrow">
+                <button id="nextArrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" viewBox="0 0 144 144"><path d="M44 72l48 30v-9L59 72l33-21v-9z"/></svg>
                 </button>
                 <h1 id="signName"></h1>
                 <img id="image" src="graphics/05_dragon.svg" alt="">
