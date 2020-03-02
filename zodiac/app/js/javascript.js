@@ -1,4 +1,15 @@
-//Welcome Screen
+// Font
+
+(function(d) {
+    var config = {
+        kitId: 'dgu3cib',
+        scriptTimeout: 3000,
+        async: true
+    },
+    h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+})(document);
+
+//Init
 
 const closeButton1 = document.querySelector('#closeModal1');
 const closeButton2 = document.querySelector('#closeModal2');
@@ -16,7 +27,7 @@ function closeModal() {
     modalWrap.hidden = true;
     welcomeMenu.hidden = true;
     signOutputDiv.hidden = true;
-}
+};
 
 opacityBackdrop.addEventListener('click', () => {
     closeModal();
@@ -29,23 +40,17 @@ function openWelcome() {
     modalWrap.hidden = false;
     welcomeMenu.hidden = false;
     welcomeMenu.scrollBy(0, -500);
-}
+};
 
 function openSignOutput() {
     opacityBackdrop.hidden = false;
     modalWrap.hidden = false;
     signOutputDiv.hidden = false;
     signOutputDiv.scrollBy(0, -500);
-}
+};
 
-function parseYear() {
-    const bdayValue = bdayInput.value;
-    const bdayArray = bdayValue.split('-');
-
-    const year = bdayArray[0];
-    const month = bdayArray[1];
-    const day = bdayArray[2];
-    console.log('Year: ' + year + ' | ' + 'Month: ' + month + ' | ' + 'Day: ' + day);
+function zodiacQuery() {
+    const year = yearInput.value;
 
     // Year int converter
 
@@ -79,14 +84,151 @@ function parseYear() {
         sign = pig;
     }
     signOutput();
-}
-
-const bdayInput = document.querySelector('#bdayInput');
+};
 
 submit.addEventListener('click', (event) => {
     event.preventDefault();
-    parseYear();
+    const yearInput = document.querySelector('#yearInput');
+    zodiacQuery();
 });
+
+// List Listener Loop
+
+const signTitles = document.querySelectorAll('#signTitles button');
+
+for (let i = 0; i < 12; i++) {
+
+    signTitles[i].addEventListener('click', () => {
+        sign = signs[i];
+        signOutput();
+    });
+};
+
+// Sign Buttons Listener Loop
+
+const signButtons = document.querySelectorAll('#signButtons button');
+
+for (let i = 0; i < 12; i++) {
+
+    signButtons[i].addEventListener('click', () => {
+        sign = signs[i];
+        signOutput();
+    });
+};
+
+// Arrow Listeners
+
+const prevArrow = document.querySelector('#prevArrow');
+const nextArrow = document.querySelector('#nextArrow');
+
+    nextArrow.addEventListener('click', () => {
+        yearInput.value = parseInt(yearInput.value) + 1;
+        zodiacQuery();
+    });
+
+    prevArrow.addEventListener('click', () => {
+        yearInput.value = parseInt(yearInput.value) - 1;
+        zodiacQuery();
+    });
+
+// Output Function
+
+const signOutput_image = document.querySelector('#image');
+const signOutput_signName = document.querySelector('#signName');
+const signOutput_topline = document.querySelector('#topline');
+const signOutput_description1 = document.querySelector('#description1');
+const signOutput_description2 = document.querySelector('#description2');
+const signOutput_mostCompatible = document.querySelector('#mostCompatible');
+const signOutput_leastCompatible = document.querySelector('#leastCompatible');
+
+function signOutput() {
+    signOutput_image.src = sign.image;
+    signOutput_image.alt = sign.signName;
+    signOutput_signName.innerHTML = sign.signName;
+    signOutput_topline.innerHTML = sign.topline;
+    signOutput_description1.innerHTML = sign.description1;
+    signOutput_description2.innerHTML = sign.description2;
+    signOutput_mostCompatible.innerHTML = 'Most Compatible With: ' + sign.mostCompatible;
+    signOutput_leastCompatible.innerHTML = 'Least Compatible With: ' + sign.leastCompatible;
+
+    openSignOutput();
+
+    // window.sound = new Audio(sign.sound);
+    // sound.play();
+
+    // createSignLinks();
+
+    const speaker = document.querySelector('speaker');
+    speaker.src = sign.sound;
+    
+    if (mute) {
+        speaker.play();
+    };
+};
+
+function createSignLinks(sign) {
+    const signLinks = document.querySelectorAll('.signLinks');
+    signLinks.forEach(signLink => {
+        signLink.addEventListener('click', () => {
+            event.preventDefault();
+            console.log('before link sets the sign: '+sign);
+            window.sign = signLink.innerHTML;
+            signOutput();
+    })
+    })
+};
+
+// KeyUp Events
+
+document.onkeyup = function(evt) {
+    evt = evt || window.event;
+    if (evt.keyCode == 27 || evt.keyCode == 32) {
+        // Keys (27: ESC, 32: SpaceBar)
+            event.preventDefault();
+            closeModal();
+    }
+    if (evt.keyCode == 37) {
+        // Keys (37: ArrowLeft)
+        event.preventDefault();
+            prevArrow.click();
+    }
+    if (evt.keyCode == 39) {
+        // Keys (39: ArrowRight)
+        event.preventDefault();
+        nextArrow.click();
+    }
+};
+
+// KeyDown Events
+
+document.onkeydown = function(evt) {
+    if (evt.keyCode == 38) {
+        // Keys (38: ArrowUp)
+        event.preventDefault();
+            welcomeMenu.scrollBy(0, -20);
+            signOutputDiv.scrollBy(0, -20);
+    }
+    if (evt.keyCode == 40) {
+        // Keys (40: ArrowDown)
+        event.preventDefault();
+            welcomeMenu.scrollBy(0, 20);
+            signOutputDiv.scrollBy(0, 20);
+    }
+};
+
+// Mute Button
+
+
+
+// WIP Alerts
+
+// nextArrow.addEventListener('click', () => {
+//     alert('This feature is still being worked on..');
+// });
+
+// prevArrow.addEventListener('click', () => {
+//     alert('This feature is still being worked on..');
+// });
 
 // Zodiac Info
 
@@ -224,114 +366,19 @@ const pig = {
 
 const signs = [rat, ox, tiger, rabbit, dragon, snake, horse, goat, monkey, rooster, dog, pig];
 
-// List Listener Loop
+const btnAudible = document.querySelector('#audible');
+const btnMuted = document.querySelector('#muted');
 
-const signTitles = document.querySelectorAll('#signTitles button');
+let mute = false;
 
-for (let i = 0; i < 12; i++) {
+btnAudible.addEventListener('click', () => {
+    btnAudible.hidden = true;
+    btnMuted.hidden = false;
+    let mute = true;
+});
 
-    signTitles[i].addEventListener('click', () => {
-        sign = signs[i];
-        signOutput();
-    });
-};
-
-// Sign Buttons Listener Loop
-
-const signButtons = document.querySelectorAll('#signButtons button');
-
-for (let i = 0; i < 12; i++) {
-
-    signButtons[i].addEventListener('click', () => {
-        sign = signs[i];
-        signOutput();
-    });
-};
-
-// Arrow Listeners
-
-const prevArrow = document.querySelector('#prevArrow');
-const nextArrow = document.querySelector('#nextArrow');
-
-// nextArrow.addEventListener('click', () => {
-//         sign = signs[i+1];
-//         signOutput();
-//     });
-
-// Output Function
-
-const signOutput_image = document.querySelector('#image');
-const signOutput_signName = document.querySelector('#signName');
-const signOutput_topline = document.querySelector('#topline');
-const signOutput_description1 = document.querySelector('#description1');
-const signOutput_description2 = document.querySelector('#description2');
-const signOutput_mostCompatible = document.querySelector('#mostCompatible');
-const signOutput_leastCompatible = document.querySelector('#leastCompatible');
-
-function signOutput() {
-    signOutput_image.src = sign.image;
-    signOutput_image.alt = sign.signName;
-    signOutput_signName.innerHTML = sign.signName;
-    signOutput_topline.innerHTML = sign.topline;
-    signOutput_description1.innerHTML = sign.description1;
-    signOutput_description2.innerHTML = sign.description2;
-    signOutput_mostCompatible.innerHTML = 'Most Compatible With: ' + sign.mostCompatible;
-    signOutput_leastCompatible.innerHTML = 'Least Compatible With: ' + sign.leastCompatible;
-
-    const sound = new Audio(sign.sound);
-    sound.play();
-
-    const signLinks = document.querySelectorAll('.signLinks');
-
-    // signLinks.forEach(signLink => {
-    //     signLink.addEventListener('click', () => {
-    //         event.preventDefault();
-    //         sign = signLink.innerHTML;
-    //         console.log('after link click: '+sign);
-    //         setTimeout(() => {
-    //         }, 100);
-    //         signOutput();
-    // })
-    // })
-
-    openSignOutput();
-}
-
-// KeyUp Events
-
-document.onkeyup = function(evt) {
-    evt = evt || window.event;
-    if (evt.keyCode == 27 || evt.keyCode == 32) {
-        // Keys (27: ESC, 32: SpaceBar)
-            event.preventDefault();
-            closeModal();
-    }
-    if (evt.keyCode == 37) {
-        // Keys (37: ArrowLeft)
-        event.preventDefault();
-            prevArrow.click();
-    }
-    if (evt.keyCode == 39) {
-        // Keys (39: ArrowRight)
-        event.preventDefault();
-        nextArrow.click();
-    }
-};
-
-// KeyDown Events
-
-document.onkeydown = function(evt) {
-    if (evt.keyCode == 38) {
-        // Keys (38: ArrowUp)
-        event.preventDefault();
-            welcomeMenu.scrollBy(0, -20);
-            signOutputDiv.scrollBy(0, -20);
-    }
-    if (evt.keyCode == 40) {
-        // Keys (40: ArrowDown)
-        event.preventDefault();
-            welcomeMenu.scrollBy(0, 20);
-            signOutputDiv.scrollBy(0, 20);
-    }
-};
-
+btnMuted.addEventListener('click', () => {
+    btnAudible.hidden = false;
+    btnMuted.hidden = true;
+    let mute = false;
+});

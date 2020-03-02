@@ -16,6 +16,12 @@ html {
     color: white;
 }
 
+header h1 {
+    font-family: tbcgothic-std, sans-serif;
+    font-weight: 800;
+    font-style: normal;
+}
+
 body {
     padding: 0 5%;
 }
@@ -284,13 +290,17 @@ form {
 #welcomeMenu, #signOutput {
     height: 100%;
     width: 100%;
-    padding: 3rem;
+    padding: 2rem 3rem;
     overflow-y: scroll;
 }
 
 #modalWrap h1, #modalWrap h2, #modalWrap h3, #modalWrap h4, #modalWrap img, #modalWrap button, #modalWrap p {
     margin: 1.5rem 0;
     cursor: default;
+}
+
+#modalWrap p {
+    line-height: 3vh;
 }
 
 #modalWrap h1 {
@@ -324,6 +334,12 @@ form {
 #mm-dd-yyyy {
     height: 2rem;
     transform: translateY(50%);
+}
+
+#signOutput h1, #signOutput h2 {
+    font-family: tbcgothic-std, sans-serif;
+    font-weight: 800;
+    font-style: normal;
 }
 
 /* Sign Output */
@@ -374,18 +390,53 @@ button#prevArrow, button#nextArrow {
     border-radius: 50%;
     opacity: .5;
     transform: translateX(-50%);
-
 }
 
 button#nextArrow {
-    left: 90vw;
+    left: 87.5vw;
     transform: rotateZ(180deg);
 }
 
+#heart, #heartBreak {
+    width: 10%;
+    height: 2rem;
+    float: left;
+    margin: 1rem 0;
+    fill: var(--light-red);
+}
+
+#signOutput h3 {
+    width: 90%;
+    float: left;
+}
+
+#muted, #audible {
+    position: fixed;
+    z-index: 40;
+    bottom: 5vh;
+    left: 5vw;
+    width: 3rem;
+    height: 3rem;
+    background: none;
+}
+
+#muted svg, #audible svg {
+    fill: white;
+    opacity: .5;
+}
+
+#audible, #muted {
+    position: fixed;
+    z-index: 40;
+    bottom: 5vh;
+    left: 5vw;
+    width: 3rem;
+    height: 3rem;
+}
 
 /* Hover States */
 
-#signTitles button, #signTitles button div, #signButtons button, #bdayInput, #submit, #watermark button, header button, #modalWrap button, #opacityBackdrop:hover {
+#signTitles button, #signTitles button div, #signButtons button, #bdayInput, #submit, #watermark button, header button, #modalWrap button, #opacityBackdrop:hover, #audible svg, #muted svg {
     transition: all .2s ease-in-out;
     -webkit-transition: all .2s ease-in-out;
     cursor: pointer;
@@ -422,4 +473,8 @@ header h1 {
 button#prevArrow:hover, button#nextArrow:hover {
     opacity: 1;
     background-color: white;
+}
+
+#audible svg:hover, #muted svg:hover {
+    opacity: 1;
 }

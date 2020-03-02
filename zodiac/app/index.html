@@ -22,8 +22,8 @@
     <main>
         <form>
             <h2>Enter your birth year:</h2>
-            <input id="bdayInput" name="bdayInput" placeholder="YYYY" required maxlength="4">
-            <input id="submit" for="bdayInput" type="submit" value="Submit">
+            <input id="yearInput" name="yearInput" value="2000" required maxlength="4">
+            <input id="submit" for="yearInput" type="submit" value="Submit">
         </form>
         <div id="signButtons">
             <button id="rat"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 148 152"><g data-name="Layer 2"><g data-name="Layer 1"><g data-name="01_rat"><path d="M83 106l22-2-1-2H92c-9 0-17-1-21-10-5-10-5-20 1-30 5-7 12-8 20-7 11 2 20 7 25 16l7 8a60 60 0 016 8c4 7 7 15 12 21 12 15 3 36-14 38-20 3-39-1-57-10-14-7-28-14-44-17a50 50 0 00-14 0c-6 0-8 4-5 10a26 26 0 0012 13c11 5 21 9 33 9-14 1-28-1-39-9a38 38 0 01-12-11c-5-8-1-17 8-19a53 53 0 0119-1c16 3 31 10 46 17 16 8 32 12 50 10a41 41 0 005-1c4-1 7-4 8-8 0-6-2-10-7-12l-15-3-23-2-10-4z"/><path d="M33 85c-5-2-5-4-3-8 5-10 6-10 16-4a27 27 0 002 1l-9-19 10-2a23 23 0 0016-10l10-15c10-20 32-17 44-7 11 11 16 24 17 39v27l-2 1-14-21c-5-10-15-13-25-15a12 12 0 01-5-2l9-3 9-3c-10-2-19 2-27 7l6-10h-1L65 65c-2 2-2 6-2 9-2 7-5 10-13 8l-8-3-7-1-2 7z"/><path d="M8 41l3-1-10-9c-2-3-2-5 3-5a27 27 0 0010-4c10-6 22-11 35-8l2-7 8-7c2 0 6 0 8 2l1 7-3 6h16c-6 9-11 18-18 25-9 9-20 14-34 9l-14-5a40 40 0 00-6-1zM46 111c-1-4 2-7 5-8a38 38 0 0111-1c4 0 6-1 7-5l12 9c-3 7-9 6-15 6H51l1-3z"/><path d="M35 10l5-8 6-1 2 5a8 8 0 01-4 4l-7 1z"/></g></g></g></svg></button>
@@ -89,9 +89,9 @@
             <div class="indicator"></div>
         </button>
         </div>
-        <div id="opacityBackdrop"></div>
-        <div id="modalWrap">
-            <div id="welcomeMenu">
+        <div id="opacityBackdrop" hidden></div>
+        <div id="modalWrap" hidden>
+            <div id="welcomeMenu" hidden>
                 <h1>Welcome!</h1>
                 <h2>Explore the Chinese zodiac signs:</h2>
                 <h3>Enter your birthday</h3>
@@ -115,15 +115,24 @@
                 <h2 id="topline"></h2>
                 <p id="description1"></p>
                 <p id="description2"></p>
+                <svg id="heart" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 216 190"><path d="M199 18l-1-1a57 57 0 00-80 0l-10 9-9-9a57 57 0 00-81 0l-1 1a57 57 0 000 81l91 91 91-91c23-23 23-59 0-81zm-10 70l-81 82-81-81a43 43 0 010-61l1-1c17-17 44-17 60 0l10 9 5 5v1l5 4 19-19c17-17 44-17 61 0l1 1c17 17 17 44 0 60z"/></svg>
                 <h3 id="mostCompatible"></h3>
+                <svg id="heartBreak" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 216 190"><path d="M199 18l-1-1a57 57 0 00-80 0l10 10c16-17 43-17 60 0l1 1c17 17 17 44 0 61l-81 81-81-81a43 43 0 010-61l1-1c17-17 44-17 60 0l24 24-28 28 28 29-16 16 10 10 27-26-29-29 29-28-34-34a57 57 0 00-81 0l-1 1a57 57 0 000 81l91 91 91-92c23-22 23-58 0-80z"/></svg>
                 <h3 id="leastCompatible"></h3>
                 <div class="buttonWrap">
                     <button class="closeModal" id="closeModal2">Close</button>
                 </div>
+                <audio id="speaker" src="" data-sound=""></audio>
             </div>
         </div>
+        <button id="audible">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 216 216"><path d="M161 50c-4-3-9-3-12 0s-3 8 0 12c12 12 19 28 19 46s-7 34-19 46c-3 3-3 9 0 12l6 2 6-2c15-16 23-36 23-58s-8-43-23-58z"/><path d="M183 27c-3-3-8-3-11 0s-3 8 0 11c18 19 28 44 28 70s-10 51-28 69c-3 3-3 9 0 12l6 2 5-2a116 116 0 000-162zM120 0l-4 1-69 62H13C6 63 0 69 0 77v63c0 7 6 13 13 13h34l69 62a4 4 0 004 1c2-1 3-3 3-5V6c0-2-1-4-3-5z"/></svg>
+        </button>
+        <button hidden id="muted">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 216 216"><path d="M123 0l-4 1-71 62H14C6 63 0 69 0 77v63c0 7 6 13 14 13h34l71 62a5 5 0 004 1c2-1 3-3 3-5V6c0-2-1-4-3-5zM215 136l-29-28 29-28c2-2 2-5 0-7s-5-2-7 0l-28 29-28-29c-2-2-5-2-7 0s-2 5 0 7l29 28-29 28c-2 2-2 5 0 7l3 1 4-1 28-29 28 29 3 1 4-1v-7z"/></svg>
+        </button>
     </main>
-    <a id="watermark" href="https://hunterhdesign.com">
+    <a id="watermark" href="https://hunterhdesign.com/idm222">
         <button>
             <p>Created by Hunter H Design</p>
             <p>www.hunterhdesign.com</p>
