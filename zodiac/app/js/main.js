@@ -49,47 +49,76 @@ function openSignOutput() {
     signOutputDiv.scrollBy(0, -500);
 };
 
-function zodiacQuery() {
-    const year = yearInput.value;
+let year;
+let month;
+let day;
 
-    // Year int converter
+function zodiacQuery() {
+
+    const bdayinput = document.querySelector('#bdayinput').value;
+    const bdayArray = bdayinput.split('-');
+
+    const year = bdayArray[0];
+    const month = bdayArray[1];
+    const day = bdayArray[2];
+
+// Year int converter
 
     const yearCalc = (year - 4 - ((Math.round((year - 4) / 12)) * 12));
 
-    //Sign Query
+//Sign Query
 
-    if ((yearCalc == 0)) {
-        sign = rat;
-    } else if ((yearCalc == 1)) {
-        sign = ox;
-    } else if ((yearCalc == 2)) {
-        sign = tiger;
-    } else if ((yearCalc == 3)) {
-        sign = rabbit;
-    } else if ((yearCalc == 4)) {
-        sign = dragon;
-    } else if ((yearCalc == 5)) {
-        sign = snake;
-    } else if ((yearCalc == -6)) {
-        sign = horse;
-    } else if ((yearCalc == -5)) {
-        sign = goat;
-    } else if ((yearCalc == -4)) {
-        sign = monkey;
-    } else if ((yearCalc == -3)) {
-        sign = rooster;
-    } else if ((yearCalc == -2)) {
-        sign = dog;
-    } else if ((yearCalc == -1)) {
-        sign = pig;
-    }
+if ((yearCalc == 0 && month > 1) || (yearCalc == 1 && month == 1)) {
+    sign = rat;
+}
+else if ((yearCalc == 1 && month > 1) || (yearCalc == 2 && month == 1)) {
+    sign = ox;
+}
+else if ((yearCalc == 2 && month > 1) || (yearCalc == 3 && month == 1)) {
+    sign = tiger;
+}
+else if ((yearCalc == 3 && month > 1) || (yearCalc == 4 && month == 1)) {
+    sign = rabbit;
+}
+else if ((yearCalc == 4 && month > 1) || (yearCalc == 5 && month == 1)) {
+    sign = dragon;
+}
+else if ((yearCalc == 5 && month > 1) || (yearCalc == -6 && month == 1)) {
+    sign = snake;
+}
+else if ((yearCalc == -6 && month > 1) || (yearCalc == -5 && month == 1)) {
+    sign = horse;
+}
+else if ((yearCalc == -5 && month > 1) || (yearCalc == -4 && month == 1)) {
+    sign = goat;
+}
+else if ((yearCalc == -4 && month > 1) || (yearCalc == -3 && month == 1)) {
+    sign = monkey;
+}
+else if ((yearCalc == -3 && month > 1) || (yearCalc == -2 && month == 1)) {
+    sign = rooster;
+}
+else if ((yearCalc == -2 && month > 1) || (yearCalc == -1 && month == 1)) {
+    sign = dog;
+}
+else if ((yearCalc == -1 && month > 1) || (yearCalc == 0 && month == 1)) {
+    sign = pig;
+}
     signOutput();
 };
 
+// Submit Listener
+
 submit.addEventListener('click', (event) => {
     event.preventDefault();
+    if (bdayinput.value == '') {
+        alert('Enter a date to use this feature');
+        return;
+    }
+    else {
     const yearInput = document.querySelector('#yearInput');
     zodiacQuery();
+    }
 });
 
 // List Listener Loop
@@ -122,13 +151,129 @@ const prevArrow = document.querySelector('#prevArrow');
 const nextArrow = document.querySelector('#nextArrow');
 
     nextArrow.addEventListener('click', () => {
-        yearInput.value = parseInt(yearInput.value) + 1;
-        zodiacQuery();
+        if (sign === rat) {
+            sign = ox;
+            signOutput();
+            return;
+    }
+        if (sign === ox) {
+            sign = tiger;
+            signOutput();
+            return;
+        }
+        if (sign === tiger) {
+            sign = rabbit;
+            signOutput();
+            return;
+    }
+        if (sign === rabbit) {
+            sign = dragon;
+            signOutput();
+            return;
+        }
+        if (sign === dragon) {
+            sign = snake;
+            signOutput();
+            return;
+    }
+        if (sign === snake) {
+            sign = horse;
+            signOutput();
+            return;
+        }
+        if (sign === horse) {
+            sign = goat;
+            signOutput();
+            return;
+    }
+        if (sign === goat) {
+            sign = monkey;
+            signOutput();
+            return;
+        }
+        if (sign === monkey) {
+            sign = rooster;
+            signOutput();
+            return;
+    }
+        if (sign === rooster) {
+            sign = dog;
+            signOutput();
+            return;
+        }
+        if (sign === dog) {
+            sign = pig;
+            signOutput();
+            return;
+    }
+        if (sign === pig) {
+            sign = rat;
+            signOutput();
+            return;
+        }
     });
 
     prevArrow.addEventListener('click', () => {
-        yearInput.value = parseInt(yearInput.value) - 1;
-        zodiacQuery();
+        if (sign === rat) {
+            sign = pig;
+            signOutput();
+            return;
+    }
+        if (sign === pig) {
+            sign = dog;
+            signOutput();
+            return;
+        }
+        if (sign === dog) {
+            sign = rooster;
+            signOutput();
+            return;
+    }
+        if (sign === rooster) {
+            sign = monkey;
+            signOutput();
+            return;
+        }
+        if (sign === monkey) {
+            sign = goat;
+            signOutput();
+            return;
+    }
+        if (sign === goat) {
+            sign = horse;
+            signOutput();
+            return;
+        }
+        if (sign === horse) {
+            sign = snake;
+            signOutput();
+            return;
+    }
+        if (sign === snake) {
+            sign = dragon;
+            signOutput();
+            return;
+        }
+        if (sign === dragon) {
+            sign = rabbit;
+            signOutput();
+            return;
+    }
+        if (sign === rabbit) {
+            sign = tiger;
+            signOutput();
+            return;
+        }
+        if (sign === tiger) {
+            sign = ox;
+            signOutput();
+            return;
+    }
+        if (sign === ox) {
+            sign = rat;
+            signOutput();
+            return;
+        }
     });
 
 // Output Function
@@ -140,10 +285,11 @@ const signOutput_description1 = document.querySelector('#description1');
 const signOutput_description2 = document.querySelector('#description2');
 const signOutput_mostCompatible = document.querySelector('#mostCompatible');
 const signOutput_leastCompatible = document.querySelector('#leastCompatible');
+const speaker = document.querySelector('#speaker');
 
 function signOutput() {
     signOutput_image.src = sign.image;
-    signOutput_image.alt = sign.signName;
+    signOutput_image.alt = sign.signName+' Icon';
     signOutput_signName.innerHTML = sign.signName;
     signOutput_topline.innerHTML = sign.topline;
     signOutput_description1.innerHTML = sign.description1;
@@ -151,31 +297,13 @@ function signOutput() {
     signOutput_mostCompatible.innerHTML = 'Most Compatible With: ' + sign.mostCompatible;
     signOutput_leastCompatible.innerHTML = 'Least Compatible With: ' + sign.leastCompatible;
 
-    openSignOutput();
-
-    // window.sound = new Audio(sign.sound);
-    // sound.play();
-
-    // createSignLinks();
-
-    const speaker = document.querySelector('speaker');
     speaker.src = sign.sound;
-    
-    if (mute) {
+
+    if (!mute) {
         speaker.play();
     };
-};
 
-function createSignLinks(sign) {
-    const signLinks = document.querySelectorAll('.signLinks');
-    signLinks.forEach(signLink => {
-        signLink.addEventListener('click', () => {
-            event.preventDefault();
-            console.log('before link sets the sign: '+sign);
-            window.sign = signLink.innerHTML;
-            signOutput();
-    })
-    })
+    openSignOutput();
 };
 
 // KeyUp Events
@@ -183,17 +311,17 @@ function createSignLinks(sign) {
 document.onkeyup = function(evt) {
     evt = evt || window.event;
     if (evt.keyCode == 27 || evt.keyCode == 32) {
-        // Keys (27: ESC, 32: SpaceBar)
+        // Keys (27 = ESC, 32 = SpaceBar)
             event.preventDefault();
             closeModal();
     }
     if (evt.keyCode == 37) {
-        // Keys (37: ArrowLeft)
+        // Keys (37 = ArrowLeft)
         event.preventDefault();
             prevArrow.click();
     }
     if (evt.keyCode == 39) {
-        // Keys (39: ArrowRight)
+        // Keys (39 = ArrowRight)
         event.preventDefault();
         nextArrow.click();
     }
@@ -205,32 +333,18 @@ document.onkeydown = function(evt) {
     if (evt.keyCode == 38) {
         // Keys (38: ArrowUp)
         event.preventDefault();
-            welcomeMenu.scrollBy(0, -20);
-            signOutputDiv.scrollBy(0, -20);
+        welcomeMenu.scrollBy(0, -20);
+        signOutputDiv.scrollBy(0, -20);
     }
     if (evt.keyCode == 40) {
         // Keys (40: ArrowDown)
         event.preventDefault();
-            welcomeMenu.scrollBy(0, 20);
-            signOutputDiv.scrollBy(0, 20);
+        welcomeMenu.scrollBy(0, 20);
+        signOutputDiv.scrollBy(0, 20);
     }
 };
 
-// Mute Button
-
-
-
-// WIP Alerts
-
-// nextArrow.addEventListener('click', () => {
-//     alert('This feature is still being worked on..');
-// });
-
-// prevArrow.addEventListener('click', () => {
-//     alert('This feature is still being worked on..');
-// });
-
-// Zodiac Info
+// Zodiac Objects
 
 const rat = {
     signName: "Rat",
@@ -368,17 +482,25 @@ const signs = [rat, ox, tiger, rabbit, dragon, snake, horse, goat, monkey, roost
 
 const btnAudible = document.querySelector('#audible');
 const btnMuted = document.querySelector('#muted');
+const soundtrack = document.querySelector('#soundtrack');
 
 let mute = false;
 
 btnAudible.addEventListener('click', () => {
     btnAudible.hidden = true;
     btnMuted.hidden = false;
-    let mute = true;
+    speaker.pause();
+    soundtrack.pause();
+    mute = true;
 });
 
 btnMuted.addEventListener('click', () => {
     btnAudible.hidden = false;
     btnMuted.hidden = true;
-    let mute = false;
+    soundtrack.play();
+    mute = false;
 });
+
+let sign;
+
+setTimeout(function(){soundtrack.play();}, 2000);

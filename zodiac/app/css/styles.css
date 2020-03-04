@@ -40,6 +40,12 @@ form input {
     color: white;
 }
 
+#bdayinput {
+    width: 10.5rem;
+    text-transform: uppercase;
+    padding-left: .5rem;
+}
+
 form h2 {
     display: inline-block;
 }
@@ -148,7 +154,7 @@ form {
     bottom: 0;
     width: 75%;
     height: 10%;
-    background-color: var(--opacity);
+    background-color: var(--dark-red);
 }
 
 #rat {
