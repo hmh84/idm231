@@ -122,7 +122,7 @@ const signs = [
         most_compatible: "<span class='sign-link'>goat</span>, <span class='sign-link'>tiger</span>, or <span class='sign-link'>rabbit</span>",
         least_compatible: "<span class='sign-link'>monkey</span> or <span class='sign-link'>snake</span>",
         sound: '12_pig.mp3',
-}];
+    }];
 
 // =========================
 // INITIALIZE
@@ -143,8 +143,8 @@ function build_sign_bubbles(sign) {
     const img = document.createElement('img');
     button.classList.add('sign-bubble');
     img.classList.add('sign-img');
-    img.src = 'dist/graphics/' + sign.image;
-    
+    img.src = './graphics/' + sign.image;
+
     bubble_wrap.appendChild(button);
     button.dataset.value = sign.name;
     button.appendChild(img);
@@ -170,7 +170,7 @@ function add_bubble_listeners() {
     sign_bubbles.forEach(bubble => {
         bubble.addEventListener('click', () => {
             determine_sign(bubble.dataset.value);
-        })
+        });
     });
 }
 
@@ -180,7 +180,7 @@ function add_list_listeners() {
     sign_lists.forEach(list => {
         list.addEventListener('click', () => {
             determine_sign(list.dataset.value);
-        })
+        });
     });
 }
 
@@ -190,24 +190,24 @@ add_list_listeners();
 // Set the active sign
 
 function determine_sign(compare) {
-    x = 0
+    x = 0;
     signs.forEach(sign => {
         if (sign.name === compare) {
             const active_sign = sign;
             window.active_sign = active_sign;
             output_sign(active_sign);
         } else {
-            x++
+            x++;
         }
     });
     if (x === signs.length) {
         const bdayArray = compare.split('-');
-    
+
         const year = bdayArray[0];
         const month = bdayArray[1];
         const day = bdayArray[2];
         // Year int converter
-            
+
         const yearCalc = (year - 4 - ((Math.round((year - 4) / 12)) * 12));
         const active_sign = signs[yearCalc];
         window.active_sign = active_sign;
@@ -229,8 +229,8 @@ const modal_most_comp = document.querySelector('.modal-most-comp');
 const modal_least_comp = document.querySelector('.modal-least-comp');
 
 function output_sign(active_sign) {
-    modal_wallpaper.style.backgroundImage = "url('dist/graphics/" + active_sign.image + "')";
-    
+    modal_wallpaper.style.backgroundImage = "url('./graphics/" + active_sign.image + "')";
+
     modal_title.innerHTML = active_sign.name + ' - ' + active_sign.topline + '...';
     modal_desc_1.innerHTML = active_sign.description1;
     modal_desc_2.innerHTML = active_sign.description2;
@@ -263,7 +263,7 @@ function add_sign_links() {
     sign_links.forEach(link => {
         link.addEventListener('click', () => {
             determine_sign(link.innerHTML);
-        })
+        });
     });
 }
 
@@ -291,7 +291,7 @@ const speaker_control = document.querySelector('#sound-control');
 const speaker_icon = document.querySelector('#speaker-icon');
 
 function call_speaker(sound) {
-    speaker.src = 'dist/sounds/' + sound;
+    speaker.src = './sounds/' + sound;
     if (!mute) {
         speaker.play();
     }
@@ -301,14 +301,14 @@ let mute;
 speaker_control.addEventListener('click', () => {
     if (speaker_icon.dataset.icon == 'muted') {
         speaker_icon.dataset.icon = 'audible';
-        speaker_icon.src = 'dist/graphics/audible.svg';
+        speaker_icon.src = './graphics/audible.svg';
     } else {
         speaker_icon.dataset.icon = 'muted';
-        speaker_icon.src = 'dist/graphics/muted.svg';
+        speaker_icon.src = './graphics/muted.svg';
     }
     speaker.pause();
     mute = !mute;
-})
+});
 
 // =========================
 // ARROWS
@@ -328,16 +328,16 @@ next_arrow.addEventListener('click', () => {
 function add_arrow_links(active_sign_index) {
     if (active_sign_index == 0) {
         // Prev
-        prev_arrow.dataset.value = signs.length -1;
+        prev_arrow.dataset.value = signs.length - 1;
     } else {
-        prev_arrow.dataset.value = active_sign_index -1;
+        prev_arrow.dataset.value = active_sign_index - 1;
     }
-    
-    if (active_sign_index == signs.length -1) {
+
+    if (active_sign_index == signs.length - 1) {
         //Next
         next_arrow.dataset.value = 0;
     } else {
-        next_arrow.dataset.value = active_sign_index +1;
+        next_arrow.dataset.value = active_sign_index + 1;
     }
 }
 
@@ -357,18 +357,18 @@ function change_sign(direction) {
 
 // KeyUp Events
 
-document.onkeyup = function(evt) {
+document.onkeyup = function (evt) {
     if (window.modal_vis == 'showing') {
         evt = evt || window.event;
         if (evt.keyCode == 27 || evt.keyCode == 32) {
             // Keys (27 = ESC, 32 = SpaceBar)
-                event.preventDefault();
-                hide_modal();
+            event.preventDefault();
+            hide_modal();
         }
         if (evt.keyCode == 37) {
             // Keys (37 = ArrowLeft)
             event.preventDefault();
-                prev_arrow.click();
+            prev_arrow.click();
         }
         if (evt.keyCode == 39) {
             // Keys (39 = ArrowRight)
@@ -380,13 +380,13 @@ document.onkeyup = function(evt) {
 
 // KeyDown Events
 
-document.onkeydown = function(evt) {
+document.onkeydown = function (evt) {
     if (window.modal_vis == 'showing') {
         if (evt.keyCode == 38) {
             // Keys (38: ArrowUp)
             event.preventDefault();
             modal.scrollBy(0, -25);
-        }  
+        }
         if (evt.keyCode == 40) {
             // Keys (40: ArrowDown)
             event.preventDefault();

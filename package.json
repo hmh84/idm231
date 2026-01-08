@@ -1,27 +1,18 @@
 {
-  "name": "idmt380",
-  "version": "1.0.0",
-  "description": "",
-  "main": "gulpfile.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/mgabriele1/idmt380.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/mgabriele1/idmt380/issues"
-  },
-  "homepage": "https://github.com/mgabriele1/idmt380#readme",
-  "devDependencies": {
-    "gulp": "^4.0.2",
-    "gulp-clean-css": "^4.3.0",
-    "gulp-minify": "^3.1.0"
-  },
-  "dependencies": {
-    "gulp-svgmin": "^3.0.0"
-  }
+	"name": "idm231",
+	"version": "1.0.0",
+	"scripts": {
+		"dev": "npx gulp watch",
+		"build": "npx gulp build"
+	},
+	"author": "Hunter Hampton",
+	"license": "ISC",
+	"description": "",
+	"devDependencies": {
+		"gulp": "^4.0.2",
+		"gulp-clean-css": "^4.3.0",
+		"gulp-htmlmin": "^5.0.1",
+		"gulp-minify": "^3.1.0",
+		"gulp-svgmin": "^3.0.0"
+	}
 }
